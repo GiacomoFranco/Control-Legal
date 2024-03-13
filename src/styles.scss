@@ -1,1 +1,68 @@
 @import 'mixins';
+
+* {
+  font-family: 'RedHatDisplay', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  --max-width: 1521px;
+
+  --main-black: #021C1E;
+  --dark-green: #004445;
+  --green: #2C7873;
+  --light-green: #6EB98E;
+  --mint-green: #B4F6D0;
+  --main-white: #FFFFFF;
+}
+
+html {
+  font-size: 1.6rem;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+
+/* Fonts
+--------------------------------------------- */
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Black.ttf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Light.ttf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Regular.ttf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
