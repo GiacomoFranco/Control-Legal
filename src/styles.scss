@@ -28,6 +28,26 @@ body {
   width: 100vw;
 }
 
+section {
+  display: flex;
+}
+
+.section-container {
+  max-width: var(--max-width);
+  height: 100%;
+  flex-grow: 1;
+  margin: 0 clamp(7rem, 7.7vw, 9.6rem);
+
+  @include for-small-tablet-portrait {
+    margin: 0 1.8rem;
+  }
+
+  .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
 
 /* Fonts
 --------------------------------------------- */
