@@ -1,0 +1,39 @@
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
+})
+export class NavbarComponent {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
+  isNavbarResponsive: boolean;
+
+  ngOnInit() {
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkWindowSize();
+    }
+  }
+
+  checkWindowSize() {
+    this.isNavbarResponsive = this.document.defaultView.innerWidth <= 1150;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkWindowSize();
+    }
+  }
+
+}
+
+// que todo fluya y que nada influya

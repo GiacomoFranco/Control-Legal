@@ -1,1 +1,109 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'mixins';
+
+* {
+  font-family: 'RedHatDisplay', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  --max-width: 1521px;
+
+  --main-black: #021C1E;
+  --dark-green: #004445;
+  --green: #2C7873;
+  --light-green: #6EB98E;
+  --mint-green: #B4F6D0;
+  --main-white: #FFFFFF;
+  --light-green-outline: #3B4E50;
+
+  --fs-900: 2.9rem;
+  --fs-800: 6.3rem;
+  --fs-700: 7.6rem;
+  --fs-600: 4.4rem;
+  --fs-500: 3.3rem;
+  --fs-400: 2.2rem;
+  --fs-300: 1.8rem;
+  --fs-200: 1.6rem;
+  --fs-100: 1.4rem;
+}
+
+html {
+  font-size: 1.6rem;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  background-color: var(--main-black);
+  color: var(--main-white);
+}
+
+section {
+  display: flex;
+}
+
+header,
+.section-container {
+  max-width: var(--max-width);
+  height: 100%;
+  flex-grow: 1;
+  margin: 0 clamp(7rem, 7.7vw, 9.6rem);
+
+  @include custom-breakpoint(1150) {
+    margin: 0 1.8rem;
+  }
+
+  .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+a {
+  color: var(--main-white);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Fonts
+--------------------------------------------- */
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Black.ttf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Light.ttf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RedHatDisplay';
+  src: url('assets/fonts/RedHatDisplay/RedHatDisplay-Regular.ttf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
