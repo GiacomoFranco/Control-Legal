@@ -36,3 +36,41 @@
     @content;
   }
 }
+
+@mixin custom-breakpoint-or( $f-measurement, $f-breakpoint,  $s-measurement, $s-breakpoint) {
+  @if  $f-measurement =='w' and  $s-measurement =='w' {
+
+    @media (max-width: #{$f-breakpoint}px),
+    (max-width: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if  $f-measurement =='w' and  $s-measurement =='h' {
+
+    @media (max-width: #{$f-breakpoint}px),
+    (max-height: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if  $f-measurement =='h' and  $s-measurement =='w' {
+
+    @media (max-height: #{$f-breakpoint}px),
+    (max-width: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if  $f-measurement =='h' and  $s-measurement =='h' {
+
+    @media (max-height: #{$f-breakpoint}px),
+    (max-height: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Invalid combination of breakpoint types. Please use 'h' or 'w'.";
+  }
+}
