@@ -58,6 +58,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
+    z-index: 10;
     height: 100vh;
     width: 100vw;
     background-image: url('/assets/images/navigation-menu-background.png');
@@ -90,7 +91,7 @@ header {
 
     .section-container {
       flex-grow: 0;
-      height: 75%;
+      height: 80%;
     }
 
     .content {
@@ -98,6 +99,7 @@ header {
       flex-direction: column;
       justify-content: space-between;
       padding: 2rem;
+      gap: 1.5rem;
 
       .navigation {
         display: flex;
@@ -224,6 +226,26 @@ header {
         .content {
           padding: 1.5rem 2rem;
 
+          .contact-button {
+            font-size: var(--fs-300);
+            line-height: 2.3rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            max-width: 35rem;
+          }
+        }
+
+        .contact-information {
+          gap: .5rem 4rem;
+        }
+      }
+    }
+  }
+
+  @include custom-breakpoint-height(530) {
+    .navigation-menu {
+      .section-container {
+        .content {
           .navigation {
             nav {
               .links-element {
@@ -234,23 +256,9 @@ header {
                 }
               }
             }
-
-            .contact-button {
-              font-size: var(--fs-300);
-              line-height: 2.3rem;
-              padding: 1rem;
-              margin-top: 1rem;
-            }
-          }
-
-          .contact-information {
-            gap: .5rem 4rem;
           }
         }
       }
     }
   }
-
 }
-
-// header .navigation-menu .content .navigation nav .links-element li a
