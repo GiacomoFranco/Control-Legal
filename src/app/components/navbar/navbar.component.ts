@@ -15,9 +15,13 @@ export class NavbarComponent {
   ) {}
 
   isNavbarResponsive: boolean;
+  openMenu: boolean = false;
+
+  toggleMenu(): void {
+    this.openMenu = !this.openMenu
+  }
 
   ngOnInit() {
-
     if (isPlatformBrowser(this.platformId)) {
       this.checkWindowSize();
     }
@@ -33,7 +37,4 @@ export class NavbarComponent {
       this.checkWindowSize();
     }
   }
-
 }
-
-// que todo fluya y que nada influya

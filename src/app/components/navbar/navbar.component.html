@@ -1,60 +1,61 @@
 @if (isNavbarResponsive) {
 <header>
   <img class="logo-element" src="/assets/images/logo-control-legal.svg" alt="Logo Control Legal">
-  <img class="burguer-menu" src="/assets/images/burguer-menu.svg" alt="Abrir Menú">
+  <img (click)="toggleMenu()" class="burguer-menu" src="/assets/images/burguer-menu.svg" alt="Abrir Menú">
 
-  <div class="navigation-menu">
-    <div class="navigation-header">
-      <div class="section-container">
-        <div class="content">
-          <img class="logo-element" src="/assets/images/logo-control-legal.svg" alt="Logo Control Legal">
-          <img class="burguer-menu" src="/assets/images/close-icon.svg" alt="Cerrar Menú">
+  @if (openMenu) {
+    <div class="navigation-menu">
+      <div class="navigation-header">
+        <div class="section-container">
+          <div class="content">
+            <img class="logo-element" src="/assets/images/logo-control-legal.svg" alt="Logo Control Legal">
+            <img (click)="toggleMenu()" class="burguer-menu" src="/assets/images/close-icon.svg" alt="Cerrar Menú">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section-container">
-      <div class="content">
-        <div class="navigation">
-          <nav>
-            <ul class="links-element">
-              <li>
-                <a href="#">Inicio</a>
-              </li>
-              <li>
-                <a href="#">Servicios</a>
-              </li>
-              <li>
-                <a href="#">Sobre Nosotros</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
-              </li>
-            </ul>
-          </nav>
-          <a class="contact-button" href="#">Contacta con nuestro equipo de profesionales <img src="/assets/images/redirection-arrow.svg" alt="Ir a contáctanos"></a>
-        </div>
-        <div class="contact-information">
-          <a href="">controllegalcl&#64;gmail.com</a>
-          <a href="">(604) 3222695</a>
-          <div class="social-media">
-            <a href="">
-              <img src="/assets/images/facebook-icon.svg" alt="">
-            </a>
-            <a href="">
-              <img src="/assets/images/instagram-icon.svg" alt="">
-            </a>
-            <a href="">
-              <img src="/assets/images/youtube-icon.svg" alt="">
-            </a>
+      <div class="section-container">
+        <div class="content">
+          <div class="navigation">
+            <nav>
+              <ul class="links-element">
+                <li>
+                  <a href="#">Inicio</a>
+                </li>
+                <li>
+                  <a href="#">Servicios</a>
+                </li>
+                <li>
+                  <a href="#">Sobre Nosotros</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+                <li>
+                  <a href="#">FAQ</a>
+                </li>
+              </ul>
+            </nav>
+            <a class="contact-button" href="#">Contacta con nuestro equipo de profesionales <img src="/assets/images/redirection-arrow.svg" alt="Ir a contáctanos"></a>
+          </div>
+          <div class="contact-information">
+            <a href="">controllegalcl&#64;gmail.com</a>
+            <a href="">(604) 3222695</a>
+            <div class="social-media">
+              <a href="">
+                <img src="/assets/images/facebook-icon.svg" alt="">
+              </a>
+              <a href="">
+                <img src="/assets/images/instagram-icon.svg" alt="">
+              </a>
+              <a href="">
+                <img src="/assets/images/youtube-icon.svg" alt="">
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  }
 </header>
 } @else {
 <header>
@@ -82,5 +83,4 @@
   </nav>
   <a class="rounded-button" href="#">Contacto <img src="/assets/images/redirection-arrow.svg" alt="Ir a la sección"></a>
 </header>
-
 }
