@@ -1,10 +1,11 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [ RouterLink ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -18,7 +19,7 @@ export class NavbarComponent {
   openMenu: boolean = false;
 
   toggleMenu(): void {
-    this.openMenu = !this.openMenu
+    this.openMenu = !this.openMenu;
   }
 
   ngOnInit() {
