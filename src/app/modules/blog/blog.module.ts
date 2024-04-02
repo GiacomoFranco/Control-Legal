@@ -6,7 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: BlogComponent },
-  { path: '/post/:slug', component: BlogPostComponent },
+  { path: 'post', redirectTo: '' },
+  { path: 'post/:slug', component: BlogPostComponent },
 ];
 
 @NgModule({

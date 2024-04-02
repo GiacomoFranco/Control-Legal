@@ -6,7 +6,8 @@ import { OurTeamComponent } from './our-team/our-team.component';
 
 const routes: Routes = [
   { path: '', component: AboutUsComponent },
-  { path: '/nuestro-equipo', component: OurTeamComponent },
+  { path: 'nuestro-equipo', redirectTo: '' },
+  { path: 'nuestro-equipo/:integrante', component: OurTeamComponent },
 ];
 
 @NgModule({
