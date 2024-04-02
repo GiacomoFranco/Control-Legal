@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -9,7 +10,9 @@ export const routes: Routes = [
   {
     path: 'servicios',
     loadChildren: () =>
-      import('./modules/services/services.module').then((m) => m.ServicesModule),
+      import('./modules/services/services.module').then(
+        (m) => m.ServicesModule
+      ),
   },
   {
     path: 'sobre-nosotros',
@@ -25,5 +28,14 @@ export const routes: Routes = [
     path: 'faq',
     loadChildren: () =>
       import('./modules/faq/faq.module').then((m) => m.FaqModule),
+  },
+  {
+    path: 'contacto',
+    loadChildren: () =>
+      import('./modules/contact/contact.module').then((m) => m.ContactModule),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
