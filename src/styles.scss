@@ -12,11 +12,13 @@
 
   --main-black: #021C1E;
   --dark-green: #004445;
+  --dark-green-outline: #273D3F;
   --green: #2C7873;
   --light-green: #6EB98E;
   --mint-green: #B4F6D0;
   --main-white: #FFFFFF;
   --light-green-outline: #3B4E50;
+  --light-gray: #4F4F53;
 
   --fs-900: 2.9rem;
   --fs-800: 6.3rem;
@@ -37,6 +39,7 @@ body {
   font-size: 1.6rem;
   overflow-x: hidden;
   width: 100vw;
+  min-height: 100vh;
   background-color: var(--main-black);
   color: var(--main-white);
 }
