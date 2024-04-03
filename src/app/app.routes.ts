@@ -3,6 +3,7 @@ import { PageNotFoundComponent } from './website/components/page-not-found/page-
 
 export const routes: Routes = [
   {
+    title: 'Control Legal',
     path: '',
     loadChildren: () =>
       import('./website/modules/home/home.module').then((m) => m.HomeModule),
