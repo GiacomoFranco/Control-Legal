@@ -44,8 +44,10 @@ body {
   color: var(--main-white);
 }
 
-section {
+section, footer {
   display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header,
