@@ -9,15 +9,19 @@ import { Loader } from '@googlemaps/js-api-loader';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements AfterViewInit {
+  readonly MAPS_API_KEY: string = import.meta.env['NG_APP_MAPS_API_KEY'];
+  readonly FOOTER_MAP_ID: string = import.meta.env['NG_APP_FOOTER_MAP_ID'];
+
   ngAfterViewInit(): void {
+
     if (typeof window !== 'undefined') {
-      this.initMap()
+      this.initMap();
     }
   }
 
   initMap() {
     const loader = new Loader({
-      apiKey: 'AIzaSyDo75I8yn8s-w3k88ZKtzSeUtbnC9Huh-M',
+      apiKey: this.MAPS_API_KEY,
       version: 'weekly',
     });
 
@@ -25,7 +29,7 @@ export class FooterComponent implements AfterViewInit {
 
     (async function () {
       const { Map } = await loader.importLibrary('maps');
-      const { AdvancedMarkerElement } = (await loader.importLibrary('marker'));
+      const { AdvancedMarkerElement } = await loader.importLibrary('marker');
 
       let map = new Map(
         document.getElementById('map') as HTMLElement,
@@ -43,7 +47,7 @@ export class FooterComponent implements AfterViewInit {
   companyPosition = { lat: 6.1912182261743745, lng: -75.57700406318196 };
 
   options = {
-    mapId: '44527b7e59b94241',
+    mapId: this.FOOTER_MAP_ID,
     center: this.companyPosition,
     zoom: 17,
   };
