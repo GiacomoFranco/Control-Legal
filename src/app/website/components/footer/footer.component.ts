@@ -11,9 +11,9 @@ import { Loader } from '@googlemaps/js-api-loader';
 export class FooterComponent implements AfterViewInit {
   readonly MAPS_API_KEY: string = import.meta.env['NG_APP_MAPS_API_KEY'];
   readonly FOOTER_MAP_ID: string = import.meta.env['NG_APP_FOOTER_MAP_ID'];
+  readonly DEPLOY_URL: string = import.meta.env['NG_APP_DEPLOY_URL'];
 
   ngAfterViewInit(): void {
-
     if (typeof window !== 'undefined') {
       this.initMap();
     }
@@ -30,16 +30,29 @@ export class FooterComponent implements AfterViewInit {
     (async function () {
       const { Map } = await loader.importLibrary('maps');
       const { AdvancedMarkerElement } = await loader.importLibrary('marker');
+      // @ts-ignore
+      const { Place } = await google.maps.importLibrary('places');
 
       let map = new Map(
         document.getElementById('map') as HTMLElement,
         element.options
       );
 
+      const glyphImg = document.createElement('img');
+      glyphImg.src = `${element.DEPLOY_URL}assets/images/logo-control-legal-v2-black.svg`;
+
+      const pinViewScaled = new google.maps.marker.PinElement({
+        scale: 1.3,
+        background: '#B4F6D0',
+        borderColor: '#021C1E',
+        glyph: glyphImg,
+      });
+
       const marker = new AdvancedMarkerElement({
         map: map,
         position: element.companyPosition,
         title: 'Control Legal',
+        content: pinViewScaled.element,
       });
     })();
   }
