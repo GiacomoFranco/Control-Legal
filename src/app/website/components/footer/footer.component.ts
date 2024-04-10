@@ -10,7 +10,9 @@ import { Loader } from '@googlemaps/js-api-loader';
 })
 export class FooterComponent implements AfterViewInit {
   ngAfterViewInit(): void {
-    this.initMap()
+    if (typeof window !== 'undefined') {
+      this.initMap()
+    }
   }
 
   initMap() {
@@ -23,9 +25,7 @@ export class FooterComponent implements AfterViewInit {
 
     (async function () {
       const { Map } = await loader.importLibrary('maps');
-      const { AdvancedMarkerElement } = (await loader.importLibrary(
-        'marker'
-      )) as google.maps.MarkerLibrary;
+      const { AdvancedMarkerElement } = (await loader.importLibrary('marker'));
 
       let map = new Map(
         document.getElementById('map') as HTMLElement,
@@ -42,13 +42,13 @@ export class FooterComponent implements AfterViewInit {
 
   companyPosition = { lat: 6.1912182261743745, lng: -75.57700406318196 };
 
-  options: google.maps.MapOptions = {
+  options = {
     mapId: '44527b7e59b94241',
     center: this.companyPosition,
     zoom: 17,
   };
 
-  markerOptions: google.maps.marker.AdvancedMarkerElementOptions = {
+  markerOptions = {
     title: 'Control Legal',
     position: this.companyPosition,
   };
