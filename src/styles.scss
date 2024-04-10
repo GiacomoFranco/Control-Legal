@@ -42,6 +42,9 @@ body {
   min-height: 100vh;
   background-color: var(--main-black);
   color: var(--main-white);
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 section, footer {
