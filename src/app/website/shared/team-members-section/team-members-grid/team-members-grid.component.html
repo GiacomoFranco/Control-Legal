@@ -1,0 +1,7 @@
+@for (member of members; track $index) {
+  <app-team-member-card /> {{member}}
+} @empty {
+  @for (card of [1,2,3,4]; track $index) {
+    <app-team-member-card [skeleton]="true"/>
+  }
+}

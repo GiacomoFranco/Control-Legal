@@ -8,10 +8,11 @@
 }
 
 :root {
-  --max-width: 1521px;
+  --max-width: 1700px;
 
   --main-black: #021C1E;
   --dark-green: #004445;
+  --dark-green-secondary: #05292C;
   --dark-green-outline: #273D3F;
   --green: #2C7873;
   --light-green: #6EB98E;
@@ -76,7 +77,18 @@ header,
 }
 
 h1 {
-  font-size: 81px;
+  font-size: var(--fs-700);
+  line-height: calc(var(--fs-700) + .1rem);
+}
+
+h2 {
+  font-size: var(--fs-600);
+  line-height: calc(var(--fs-600) + .1rem);
+}
+
+p {
+  font-size: var(--fs-300);
+  line-height: calc(var(--fs-300) + .1rem);
 }
 
 a {
@@ -84,6 +96,10 @@ a {
   font-size: var(--fs-200);
   font-weight: 400;
   text-decoration: none;
+}
+
+.highlight-text {
+  color: var(--light-green);
 }
 
 /* Fonts
