@@ -3,6 +3,9 @@
     .section-container {
       .content{
         flex-direction: column;
+        .members-element {
+          padding: 5rem 0rem;
+        }
       }
     }
   }
