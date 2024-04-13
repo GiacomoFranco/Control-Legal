@@ -4,7 +4,17 @@
       <div class="title-element">
         <h2>Expertos en acción, <span class="highlight-text">creando <br> soluciones legales innovadoras</span> con <br> conocimiento y experiencia.</h2>
       </div>
-      <app-team-members />
+      <div class="members-element">
+        @if (members$; as members ) {
+          @if (members.length
+          < 4) { <app-team-members-grid [members]="members" />
+          } @else {
+          <app-team-members-swiper [members]="members" />
+          }
+        } @else {
+          <app-team-members-grid />
+        }
+      </div>
     </div>
   </div>
 </section>
