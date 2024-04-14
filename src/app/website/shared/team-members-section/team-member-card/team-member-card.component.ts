@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class TeamMemberCardComponent {
   @Input('skeleton') skeleton: boolean = false;
-  @Input() memberName: string;
+  @Input() memberName: any;
 }

@@ -8,6 +8,6 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
   templateUrl: './team-members-swiper.component.html',
   styleUrl: './team-members-swiper.component.scss',
 })
-export class TeamMembersSwiperComponent {
-  @Input() members: string[] | undefined = undefined;
+export class TeamMembersSwiperComponent{
+  @Input() members: object[] | undefined = undefined;
 }

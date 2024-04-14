@@ -9,5 +9,5 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
   styleUrl: './team-members-grid.component.scss',
 })
 export class TeamMembersGridComponent {
-  @Input() members: [] | undefined = undefined;
+  @Input() members: object[] | undefined = undefined;
 }
