@@ -9,6 +9,7 @@
 
 :root {
   --max-width: 1700px;
+  --section-margin: 0 clamp(7rem, 7.7vw, 9.6rem);
 
   --main-black: #021C1E;
   --dark-green: #004445;
@@ -30,6 +31,14 @@
   --fs-300: 1.8rem;
   --fs-200: 1.6rem;
   --fs-100: 1.4rem;
+
+  @include custom-breakpoint(1150) {
+    --section-margin: 0 3.8rem;
+  }
+
+  @include custom-breakpoint(370) {
+    --section-margin: 0 1.8rem;
+  }
 }
 
 html {
@@ -43,15 +52,17 @@ body {
   min-height: 100vh;
   background-color: var(--main-black);
   color: var(--main-white);
+
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
-section, footer {
+section,
+footer {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 header,
@@ -59,15 +70,7 @@ header,
   max-width: var(--max-width);
   height: 100%;
   flex-grow: 1;
-  margin: 0 clamp(7rem, 7.7vw, 9.6rem);
-
-  @include custom-breakpoint(1150) {
-    margin: 0 3.8rem;
-  }
-
-  @include custom-breakpoint(370) {
-    margin: 0 1.8rem;
-  }
+  margin: var(--section-margin);
 
   .content {
     display: flex;
