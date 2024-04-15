@@ -1,5 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { Observable, map, timer } from 'rxjs';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { TeamMembersGridComponent } from './team-members-grid/team-members-grid.component';
 import { TeamMembersSwiperComponent } from './team-members-swiper/team-members-swiper.component';
@@ -15,5 +15,5 @@ import { HttpClient } from '@angular/common/http';
 export class TeamMembersSectionComponent {
   constructor(private http: HttpClient) {}
 
-  members$: Observable<object[]> = this.http.get<any>('https://fakestoreapi.com/products?limit=3');
+  members$: Observable<object[]> = this.http.get<any>('https://fakestoreapi.com/products?limit=10');
 }

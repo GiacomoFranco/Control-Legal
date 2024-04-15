@@ -1,3 +1,9 @@
-@for (member of members; track $index) {
-  <app-team-member-card />
-}
+<div class="swiper">
+  <div class="swiper-wrapper">
+    @for (member of members; track $index) {
+      <div class="swiper-slide">Slide {{$index + 1}}</div>
+    }
+  </div>
+</div>
+<div class="test">
+</div>
