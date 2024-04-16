@@ -16,17 +16,33 @@ export class TeamMembersSwiperComponent implements AfterViewInit {
 
   platformId = inject(PLATFORM_ID);
 
-  swiper: Swiper  ;
+  swiper: Swiper;
 
   initSwiper(): void {
     this.swiper = new Swiper('.swiper', {
-      slidesPerView: 4,
-      slidesPerGroup: 4,
-      // autoHeight: true,
-      spaceBetween: 10,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 20,
+        },
+        1300: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 20,
+        },
       },
     });
   }
