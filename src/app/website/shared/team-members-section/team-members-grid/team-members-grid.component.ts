@@ -5,7 +5,15 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
   selector: 'app-team-members-grid',
   standalone: true,
   imports: [TeamMemberCardComponent],
-  templateUrl: './team-members-grid.component.html',
+  template: `
+    @for (member of members; track $index) {
+      <app-team-member-card [memberName]="member" />
+    } @empty {
+      @for (card of [1,2,3,4]; track $index) {
+        <app-team-member-card [skeleton]="true"/>
+      }
+    }
+  `,
   styleUrl: './team-members-grid.component.scss',
 })
 export class TeamMembersGridComponent {

@@ -6,8 +6,10 @@ import { WebsiteComponent } from './website/website.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, WebsiteComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `
+    <app-website/>
+  `,
+  styles: ``
 })
 export class AppComponent {
   title = 'control-legal';

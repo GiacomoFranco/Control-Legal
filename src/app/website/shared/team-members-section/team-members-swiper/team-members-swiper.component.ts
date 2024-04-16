@@ -10,7 +10,17 @@ import Swiper from 'swiper';
   selector: 'app-team-members-swiper',
   standalone: true,
   imports: [TeamMemberCardComponent, SwiperControlsComponent],
-  templateUrl: './team-members-swiper.component.html',
+  template: `
+    <app-swiper-controls [swiperID]="swiperID"/>
+
+    <div class="swiper" [id]="swiperID">
+      <div class="swiper-wrapper">
+        @for (member of members; track $index) {
+          <app-team-member-card class="swiper-slide"/>
+        }
+      </div>
+    </div>
+  `,
   styleUrl: './team-members-swiper.component.scss',
 })
 export class TeamMembersSwiperComponent implements AfterViewInit {

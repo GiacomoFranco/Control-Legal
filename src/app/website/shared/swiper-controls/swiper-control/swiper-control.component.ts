@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-swiper-control',
   standalone: true,
   imports: [],
-  templateUrl: './swiper-control.component.html',
-  styleUrl: './swiper-control.component.scss'
+  template: ` <img src="/assets/images/arrow-xy.svg" alt="Ícono flecha" /> `,
+  styleUrl: './swiper-control.component.scss',
 })
-export class SwiperControlComponent {
-}
+export class SwiperControlComponent {}

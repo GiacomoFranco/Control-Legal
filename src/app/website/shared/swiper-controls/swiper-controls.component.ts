@@ -5,7 +5,10 @@ import { SwiperControlComponent } from './swiper-control/swiper-control.componen
   selector: 'app-swiper-controls',
   standalone: true,
   imports: [SwiperControlComponent],
-  templateUrl: './swiper-controls.component.html',
+  template: `
+    <app-swiper-control class="prev" [id]="swiperID + '-prev-control'"/>
+    <app-swiper-control class="next" [id]="swiperID + '-next-control'"/>
+  `,
   styleUrl: './swiper-controls.component.scss',
 })
 export class SwiperControlsComponent {

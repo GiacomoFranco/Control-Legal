@@ -7,7 +7,17 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-website',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, NavbarComponent, FooterComponent],
-  templateUrl: './website.component.html',
-  styleUrl: './website.component.scss',
+  template: `
+    <app-navbar />
+    <router-outlet />
+    <app-footer />
+  `,
+  styles: `
+    :host {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  `,
 })
 export class WebsiteComponent {}
