@@ -1,20 +1,12 @@
 @import 'swiper/scss';
 
-@mixin swiper-container {
-  swiper-container,
+@mixin swiper($height) {
   .swiper {
-    height: 500px;
+    height: #{$height} !important;
     width: 100%;
 
-    swiper-slide,
     .swiper-slide {
-      border: 2px black solid;
-      background: red;
       height: 100%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }

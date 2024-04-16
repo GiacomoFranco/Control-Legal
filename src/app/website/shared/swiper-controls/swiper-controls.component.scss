@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  gap: 1.4rem;
+  position: absolute;
+  top: -8.6rem;
+
+  .prev {
+    background-color: var(--dark-green-lighter);
+  }
+
+  .next {
+    background-color: var(--dark-green-darker);
+    rotate: 180deg;
+  }
+}
