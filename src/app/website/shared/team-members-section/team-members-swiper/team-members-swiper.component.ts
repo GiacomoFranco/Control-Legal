@@ -2,12 +2,14 @@ import { AfterViewInit, Component, Input } from '@angular/core';
 import { TeamMemberCardComponent } from '../team-member-card/team-member-card.component';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, inject } from '@angular/core';
+import { SwiperControlsComponent } from '../../swiper-controls/swiper-controls.component';
+import { Navigation} from 'swiper/modules';
 import Swiper from 'swiper';
 
 @Component({
   selector: 'app-team-members-swiper',
   standalone: true,
-  imports: [TeamMemberCardComponent],
+  imports: [TeamMemberCardComponent, SwiperControlsComponent],
   templateUrl: './team-members-swiper.component.html',
   styleUrl: './team-members-swiper.component.scss',
 })
@@ -15,17 +17,17 @@ export class TeamMembersSwiperComponent implements AfterViewInit {
   @Input() members: object[] | undefined = undefined;
 
   platformId = inject(PLATFORM_ID);
-
-  swiper: Swiper;
+  swiperID: string = "members"
 
   initSwiper(): void {
-    this.swiper = new Swiper('.swiper', {
+    const swiper: Swiper = new Swiper('.swiper', {
+      modules: [Navigation],
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 20,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: `#${this.swiperID}-next-control`,
+        prevEl: `#${this.swiperID}-prev-control`,
       },
       breakpoints: {
         600: {

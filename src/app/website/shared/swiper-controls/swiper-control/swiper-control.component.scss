@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99rem;
+  width: 5.6rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+
+  img {
+    width: 1.22rem;
+    user-select: none;
+  }
+}

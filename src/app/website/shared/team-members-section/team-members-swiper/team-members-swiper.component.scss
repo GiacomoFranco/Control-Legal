@@ -2,6 +2,7 @@
 
 :host {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 200px;
   flex-grow: 1;
@@ -9,10 +10,4 @@
   gap: 2rem;
 
   @include swiper(44.2rem);
-
-  .test {
-    width: 100%;
-    height: 500px;
-    background-color: aqua;
-  }
 }

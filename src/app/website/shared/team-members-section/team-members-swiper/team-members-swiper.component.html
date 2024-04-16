@@ -1,9 +1,9 @@
-<div class="swiper">
+<app-swiper-controls [swiperID]="swiperID"/>
+
+<div class="swiper" [id]="swiperID">
   <div class="swiper-wrapper">
     @for (member of members; track $index) {
       <app-team-member-card class="swiper-slide"/>
     }
   </div>
-</div>
-<div class="test">
 </div>
