@@ -1,0 +1,20 @@
+$x-variable: .675rem;
+
+:host {
+  display: inline;
+  position: absolute;
+  z-index: 10;
+  bottom: 2.8rem;
+  right: $x-variable;
+  bottom: calc($x-variable * 1.39);
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5.4rem;
+    aspect-ratio: 1/1;
+    background-color: var(--main-black);
+    border-radius: 99rem;
+  }
+}
