@@ -16,5 +16,11 @@ $x-variable: .675rem;
     aspect-ratio: 1/1;
     background-color: var(--main-black);
     border-radius: 99rem;
+    user-select: none;
+
+    img {
+      filter: invert(73%) sepia(35%) saturate(403%) hue-rotate(93deg) brightness(150%) contrast(87%);
+      scale: 1.17;
+    }
   }
 }
