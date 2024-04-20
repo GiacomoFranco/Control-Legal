@@ -3,7 +3,7 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { SwiperControlsComponent } from '../../swiper-controls/swiper-controls.component';
-import { Navigation} from 'swiper/modules';
+import { Autoplay, Navigation} from 'swiper/modules';
 import Swiper from 'swiper';
 import { Member } from '@app/website/interfaces/member.interface';
 
@@ -32,10 +32,14 @@ export class TeamMembersSwiperComponent implements AfterViewInit {
 
   initSwiper(): void {
     const swiper: Swiper = new Swiper('.swiper', {
-      modules: [Navigation],
+      modules: [Navigation, Autoplay],
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 20,
+      autoplay: {
+        delay: 5000,
+        pauseOnMouseEnter: true,
+      },
       navigation: {
         nextEl: `#${this.swiperID}-next-control`,
         prevEl: `#${this.swiperID}-prev-control`,
