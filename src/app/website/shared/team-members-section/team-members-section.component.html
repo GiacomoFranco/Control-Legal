@@ -6,11 +6,7 @@
       </div>
       <div class="members-element">
         @if (members$ | async ; as members ) {
-          @if (members.length <= 4) {
-            <app-team-members-grid [members]="members" />
-          } @else {
           <app-team-members-swiper [members]="members" />
-          }
         } @else {
           <app-team-members-grid />
         }
