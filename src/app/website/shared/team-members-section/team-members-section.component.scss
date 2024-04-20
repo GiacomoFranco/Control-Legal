@@ -3,6 +3,10 @@
     .section-container {
       .content{
         flex-direction: column;
+        .title-element {
+          max-width: 73rem;
+        }
+
         .members-element {
           display: flex;
           padding: 5rem 0rem;
