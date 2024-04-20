@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TeamMemberCardComponent } from '../team-member-card/team-member-card.component';
 
 @Component({
-  selector: 'app-team-members-grid',
+  selector: 'app-team-members-skeleton',
   standalone: true,
   imports: [TeamMemberCardComponent],
   template: `
@@ -10,6 +10,6 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
       <app-team-member-card />
     }
   `,
-  styleUrl: './team-members-grid.component.scss',
+  styleUrl: './team-members-skeleton.component.scss',
 })
-export class TeamMembersGridComponent {}
+export class TeamMembersSkeletonComponent {}

@@ -1,7 +1,7 @@
 import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AsyncPipe, isPlatformBrowser } from '@angular/common';
-import { TeamMembersGridComponent } from './team-members-grid/team-members-grid.component';
+import { TeamMembersSkeletonComponent } from './team-members-skeleton/team-members-skeleton.component';
 import { TeamMembersSwiperComponent } from './team-members-swiper/team-members-swiper.component';
 import { HttpClient } from '@angular/common/http';
 import { Member } from '@app/website/interfaces/member.interface';
@@ -9,7 +9,7 @@ import { Member } from '@app/website/interfaces/member.interface';
 @Component({
   selector: 'app-team-members-section',
   standalone: true,
-  imports: [AsyncPipe, TeamMembersGridComponent, TeamMembersSwiperComponent],
+  imports: [AsyncPipe, TeamMembersSkeletonComponent, TeamMembersSwiperComponent],
   templateUrl: './team-members-section.component.html',
   styleUrl: './team-members-section.component.scss',
 })

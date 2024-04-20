@@ -8,7 +8,7 @@
         @if (members$ | async ; as members ) {
           <app-team-members-swiper [members]="members" />
         } @else {
-          <app-team-members-grid />
+          <app-team-members-skeleton />
         }
       </div>
     </div>
