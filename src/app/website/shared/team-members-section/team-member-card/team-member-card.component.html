@@ -1,12 +1,14 @@
 @if (member) {
-  <div class="member-image">
-    <img [src]="member.photo.url" [alt]="member.photo.alt">
-    <app-redirection-button [iconAltProp]="" />
-  </div>
-  <div class="member-info">
-    <h3 class="member-name">{{member.name}}</h3>
-    <p class="member-charge">{{member.charge}}</p>
-  </div>
+  <a [routerLink]="['sobre-nosotros/nuestro-equipo', member.slug]" >
+    <div class="member-image">
+      <img [src]="member.photo.url" [alt]="member.photo.alt">
+      <app-redirection-button [iconAltProp]="" />
+    </div>
+    <div class="member-info">
+      <h3 class="member-name">{{member.name}}</h3>
+      <p class="member-charge">{{member.charge}}</p>
+    </div>
+  </a>
 } @else {
   <div class="member-image__skeleton">
   </div>
