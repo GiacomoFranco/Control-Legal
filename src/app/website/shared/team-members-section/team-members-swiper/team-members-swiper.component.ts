@@ -70,16 +70,18 @@ export class TeamMembersSwiperComponent implements AfterViewInit, OnDestroy {
       },
       on: {
         afterInit: (swiperInit) => {
-          var slidesPerView = swiperInit.params.slidesPerView
+          var slidesPerView = swiperInit.params.slidesPerView;
           this.allowControls =
-            typeof slidesPerView === 'number' && slidesPerView < this.members.length;
+            typeof slidesPerView === 'number' &&
+            slidesPerView < this.members.length;
           swiperInit.off('afterInit');
           this.cd.detectChanges();
         },
         breakpoint: (swiperInit) => {
           var slidesPerView = swiperInit.params.slidesPerView;
           this.allowControls =
-            typeof slidesPerView === 'number' && slidesPerView < this.members.length;
+            typeof slidesPerView === 'number' &&
+            slidesPerView < this.members.length;
           this.cd.detectChanges();
         },
       },
