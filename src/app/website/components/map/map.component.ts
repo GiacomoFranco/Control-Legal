@@ -39,7 +39,7 @@ export class MapComponent {
       );
 
       const glyphImg = document.createElement('img');
-      glyphImg.src = `${element.DEPLOY_URL}assets/images/logo-control-legal-v2-black.svg`;
+      glyphImg.src = `${element.DEPLOY_URL}assets/icons/logo-control-legal-v2-black.svg`;
 
       const pinViewScaled = new google.maps.marker.PinElement({
         scale: 1.4,

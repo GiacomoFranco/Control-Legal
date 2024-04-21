@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   imports: [],
   template: `
     <a href="">
-      <img src="/assets/images/redirection-arrow.svg" [alt]="iconAltProp" />
+      <img src="/assets/icons/redirection-arrow.svg" [alt]="iconAltProp" />
     </a>
   `,
   styleUrl: './redirection-button.component.scss',

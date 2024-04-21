@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-swiper-control',
   standalone: true,
   imports: [],
-  template: ` <img src="/assets/images/arrow-xy.svg" [alt]="altImg" /> `,
+  template: ` <img src="/assets/icons/arrow-xy.svg" [alt]="altImg" /> `,
   styleUrl: './swiper-control.component.scss',
 })
 export class SwiperControlComponent {
