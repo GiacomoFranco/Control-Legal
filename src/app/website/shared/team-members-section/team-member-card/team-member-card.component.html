@@ -2,7 +2,7 @@
   <a [routerLink]="['sobre-nosotros/nuestro-equipo', member.slug]" >
     <div class="member-image">
       <img [src]="member.photo.url" [alt]="member.photo.alt">
-      <app-redirection-button [iconAltProp]="" />
+      <app-redirection-button [iconAltProp]="'Ver miembro del equipo'" />
     </div>
     <div class="member-info">
       <h3 class="member-name">{{member.name}}</h3>

@@ -38,7 +38,7 @@ export class TeamMembersSwiperComponent implements AfterViewInit, OnDestroy {
   swiper: Swiper;
   swiperID: string = 'members';
   allowControls: boolean;
-  platformId = inject(PLATFORM_ID);
+  platformId: Object = inject(PLATFORM_ID);
 
   initSwiper(): void {
     this.swiper = new Swiper('.swiper', {
