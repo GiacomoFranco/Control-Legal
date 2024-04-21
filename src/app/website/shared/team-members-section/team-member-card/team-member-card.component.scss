@@ -1,8 +1,9 @@
 :host {
-  width: 30.6rem;
+  display: flex;
+  flex-grow: 1;
   height: 55.3rem;
 
-  a {
+  a, .skeleton {
     display: flex !important;
     flex-direction: column;
     justify-content: flex-start;
