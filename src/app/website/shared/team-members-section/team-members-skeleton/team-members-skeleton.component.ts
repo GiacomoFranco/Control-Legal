@@ -6,10 +6,12 @@ import { TeamMemberCardComponent } from '../team-member-card/team-member-card.co
   standalone: true,
   imports: [TeamMemberCardComponent],
   template: `
-    @for (card of [1,2,3,4]; track $index) {
-      <app-team-member-card />
+    @for (card of skeletonArray; track $index) {
+      <app-team-member-card class="skeleton-card"/>
     }
   `,
   styleUrl: './team-members-skeleton.component.scss',
 })
-export class TeamMembersSkeletonComponent {}
+export class TeamMembersSkeletonComponent {
+  skeletonArray: any[] = Array(4)
+}
