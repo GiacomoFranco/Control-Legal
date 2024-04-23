@@ -8,6 +8,7 @@
       display: flex;
       justify-content: space-between;
       gap: 5rem;
+      font-weight: 300;
 
       .text-element {
         flex-basis: 80rem;
@@ -33,6 +34,13 @@
 
         .text-element {
           flex-basis: initial;
+        }
+      }
+
+      @include custom-breakpoint(450) {
+        app-indicators {
+          flex-wrap: wrap;
+          text-align: start;
         }
       }
     }
