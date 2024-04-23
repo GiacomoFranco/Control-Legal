@@ -80,3 +80,8 @@
     @warn "Invalid combination of breakpoint types. Please use 'h' or 'w'.";
   }
 }
+
+@mixin custom-heading($size, $line-height) {
+  font-size: #{$size};
+  line-height: calc(#{$size} + .1rem);
+}
