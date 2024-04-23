@@ -1,0 +1,41 @@
+@import 'mixins';
+
+:host {
+  .metrics {
+    padding: 4.8rem 0;
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 5rem;
+
+      .text-element {
+        flex-basis: 80rem;
+        color: var(--opaque-white);
+
+        p:nth-child(1) {
+          margin-bottom: 1.9rem;
+        }
+      }
+
+      @include for-tablet-portrait {
+        flex-direction: column-reverse;
+        flex-basis: initial;
+        gap: 7rem;
+
+        app-indicators {
+          align-self: center;
+          max-width: 53.3rem;
+          width: 100%;
+          flex-basis: initial;
+          text-align: center;
+        }
+
+        .text-element {
+          flex-basis: initial;
+        }
+      }
+    }
+
+  }
+}

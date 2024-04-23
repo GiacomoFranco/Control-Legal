@@ -1,0 +1,13 @@
+:host {
+  max-width: 20.8rem;
+
+  .indicator-value {
+    font-size: var(--fs-800);
+    font-weight: 800;
+    margin-bottom: .3rem;
+  }
+
+  .indicator-text {
+    color: var(--opaque-white);
+  }
+}
