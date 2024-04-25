@@ -1,0 +1,69 @@
+<section class="ask-a-question">
+  <div class="section-container">
+    <div class="content">
+      <div class="text-element">
+        <h2>¿Tienes una pregunta legal que <span class="highlight-text">necesita ser resuelta?</span></h2>
+        <p>
+          Nos dedicamos a proteger sus derechos e intereses y brindarle un servicio <strong>excepcional en cada etapa de
+            su
+            proceso legal.</strong>
+          su buscas un abogado confiable y comprometido con tus necesidades, ¡aquí estamos para ayudarte!
+        </p>
+      </div>
+      <div class="form-element">
+        <form action="">
+
+          <div class="form-field">
+            <div class="input-container">
+              <input type="text" id="contact-name" required>
+              <label for="contact-name">Nombre completo</label>
+              <div class="underline"></div>
+            </div>
+            <span class="form-error" [hidden]="true">Error</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <div class="input-container">
+                <input type="text" id="contact-email" required>
+                <label for="contact-email">Email</label>
+                <div class="underline"></div>
+              </div>
+              <span class="form-error" [hidden]="true">Error</span>
+            </div>
+
+            <div class="form-field">
+              <div class="input-container">
+                <input type="text" id="contact-phone" required>
+                <label for="contact-phone">Teléfono</label>
+                <div class="underline"></div>
+              </div>
+              <span class="form-error" [hidden]="true">Error</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <div class="input-container">
+              <textarea name="" id="" cols="30" rows="1" id="contact-message" required></textarea>
+              <label for="contact-message">Escribe tu pregunta acá</label>
+              <div class="underline"></div>
+            </div>
+            <span class="form-error" [hidden]="true">Error</span>
+          </div>
+
+          <div class="form-row">
+            <div class="privacy-policy-field">
+              <div class="input-container">
+                <input type="checkbox" id="privacy-policy" required>
+                <label for="privacy-policy">Aceptar <a href="">Políticas de privacidad</a></label>
+              </div>
+              <span class="form-error" [hidden]="true">Error</span>
+            </div>
+
+            <button>Enviar pregunta <img class="arrow-icon" src="/assets/icons/redirection-arrow-black.svg" alt="ícono enviar pregunta"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

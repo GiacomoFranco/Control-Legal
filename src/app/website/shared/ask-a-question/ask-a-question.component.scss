@@ -1,0 +1,70 @@
+@import 'mixins';
+@import 'form';
+
+:host {
+  .ask-a-question {
+    padding: 8.4rem 0;
+    background-color: var(--dark-green-secondary);
+
+    .content {
+      justify-content: space-between;
+      align-items: center;
+      gap: 5rem;
+
+      .text-element {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 58.5rem;
+        gap: 3.5rem;
+
+        h2 {
+          max-width: 58.5rem;
+        }
+
+        p {
+          max-width: 75rem;
+          font-weight: 300;
+        }
+      }
+
+      .form-element {
+        border-left: .1rem solid #7070705d;
+        padding: 1.7rem 0 1.7rem clamp(5rem, 4vw, 10rem);
+        width: 100%;
+        max-width: calc(50% + 5rem);
+
+        @include form;
+      }
+
+      @include custom-breakpoint(1200) {
+        flex-direction: column;
+
+        .text-element {
+          flex-basis: initial;
+          text-align: center;
+          align-items: center;
+        }
+
+        .form-element {
+          padding: initial;
+          border: initial;
+          max-width: initial;
+        }
+      }
+
+      @include custom-breakpoint(665) {
+        .text-element {
+          p {
+            text-wrap: balance;
+          }
+        }
+      }
+
+      @include custom-breakpoint(630) {
+        .text-element {
+          text-align: start;
+        }
+      }
+    }
+  }
+}
