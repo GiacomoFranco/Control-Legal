@@ -75,11 +75,8 @@
         }
       }
 
-      .form-error {
-        margin-top: .5rem;
-        transform-origin: top left;
-        color: red;
-        scale: .8;
+      .hidden {
+        visibility: hidden;
       }
 
     }
@@ -88,18 +85,24 @@
       display: flex;
       flex-grow: 5;
       margin-right: auto;
+      flex-direction: column;
+      align-items: start;
 
       .input-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
 
         input {
           width: 1.5rem;
           border: none;
           outline: none;
           cursor: pointer;
+
+          &:autofill {
+            background: transparent;
+          }
         }
 
         label {
@@ -120,8 +123,28 @@
       gap: 0 clamp(2.5rem, 3vw, 6rem);
       flex-wrap: wrap;
 
-      &:last-child{
+      &:last-child {
         gap: 2.5rem;
+      }
+    }
+
+    .form-error {
+      margin-top: .5rem;
+      transform-origin: top left;
+      color: var(--light-brown);
+      scale: .8;
+      display: flex;
+      gap: 1rem;
+      max-width: 40rem;
+
+      &[hidden] {
+        display: none !important;
+      }
+
+      img {
+        width: 1.8rem;
+        align-self: baseline;
+        margin-top: .2rem;
       }
     }
 
@@ -134,6 +157,8 @@
       border: none;
       border-radius: 99rem;
       padding: 1.5rem;
+      max-height: 4.8rem;
+
       cursor: pointer;
 
       img {
