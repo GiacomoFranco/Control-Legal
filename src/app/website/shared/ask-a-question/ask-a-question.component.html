@@ -29,18 +29,13 @@
               </div>
 
               <div class="form-row">
-                <div class="privacy-policy-field">
-                  <div class="input-container">
-                    <input type="checkbox" id="privacy-policy" formControlName="terms" required>
-                    <label for="privacy-policy">Aceptar <a href="">Políticas de privacidad</a></label>
-                  </div>
+                  <app-checkbox-input [control]="terms">
+                      <app-field-error error [validation]="terms.touched && terms.value !== true" alert="Debes aceptar nuestras politicas de privacidad para poder enviar una pregunta" />
+                  </app-checkbox-input>
 
-                  <app-field-error [validation]="(terms.touched && terms.value !== true)" alert="Debes aceptar nuestras politicas de privacidad para poder enviar una pregunta"/>
-                </div>
+                  <button>Enviar pregunta <img class="arrow-icon" src="/assets/icons/redirection-arrow-black.svg" alt="ícono enviar pregunta"></button>
               </div>
 
-
-              <button>Enviar pregunta <img class="arrow-icon" src="/assets/icons/redirection-arrow-black.svg" alt="ícono enviar pregunta"></button>
         </app-form>
       </div>
     </div>

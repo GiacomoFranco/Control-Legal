@@ -10,11 +10,12 @@ import {
 } from '@angular/forms';
 import { TextInputComponent } from '../form/text-input/text-input.component';
 import { FieldErrorComponent } from '../form/field-error/field-error.component';
+import { CheckboxInputComponent } from '../form/checkbox-input/checkbox-input.component';
 
 @Component({
   selector: 'app-ask-a-question',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent, CheckboxInputComponent],
   templateUrl: './ask-a-question.component.html',
   styleUrl: './ask-a-question.component.scss',
 })

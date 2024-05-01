@@ -14,42 +14,6 @@ form {
     }
   }
 
-  .privacy-policy-field {
-    display: flex;
-    flex-grow: 5;
-    margin-right: auto;
-    flex-direction: column;
-    align-items: start;
-
-    .input-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-
-      input {
-        width: 1.5rem;
-        border: none;
-        outline: none;
-        cursor: pointer;
-
-        &:autofill {
-          background: transparent;
-        }
-      }
-
-      label {
-        user-select: none;
-        cursor: pointer;
-
-        a {
-          font-weight: 500;
-          color: var(--light-green);
-        }
-      }
-    }
-  }
-
   button {
     flex-grow: 1;
     flex-basis: 20rem;
