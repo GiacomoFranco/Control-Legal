@@ -1,35 +1,38 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormComponent } from '../form/form.component';
 import {
   FormGroup,
   FormControl,
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { TextInputComponent } from '../form/text-input/text-input.component';
+import { FieldErrorComponent } from '../form/field-error/field-error.component';
 
 @Component({
   selector: 'app-ask-a-question',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent],
   templateUrl: './ask-a-question.component.html',
   styleUrl: './ask-a-question.component.scss',
 })
-export class AskAQuestionComponent implements OnInit {
+export class AskAQuestionComponent {
   constructor(private http: HttpClient) {}
 
   readonly API_URL: string = import.meta.env['NG_APP_API_URL'];
 
   public form: FormGroup = new FormGroup({
-    name: new FormControl(null, Validators.required),
-    email: new FormControl(null, [Validators.required, Validators.email]),
-    phone: new FormControl(null, [
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [
       Validators.required,
       Validators.pattern('[0-9]*'),
       Validators.min(1234567890),
       Validators.max(12345678901),
     ]),
-    question: new FormControl(null, Validators.required),
+    question: new FormControl('', Validators.required),
     terms: new FormControl(false, [Validators.requiredTrue]),
   });
 
@@ -52,10 +55,6 @@ export class AskAQuestionComponent implements OnInit {
     return this.form.get('terms') as FormControl;
   }
 
-  ngOnInit(): void {
-    // console.log(this.form.controls['terms']);
-  }
-
   sendMail() {
     this.form.markAllAsTouched();
 
@@ -68,8 +67,8 @@ export class AskAQuestionComponent implements OnInit {
         question: this.form.value.question,
     };
 
-    this.http
-      .post<any>(`${this.API_URL}send-email`, mensaje)
-      .subscribe((res) => console.log(res));
+    // this.http
+    //   .post<any>(`${this.API_URL}send-email`, mensaje)
+    //   .subscribe((res) => console.log(res));
   }
 }

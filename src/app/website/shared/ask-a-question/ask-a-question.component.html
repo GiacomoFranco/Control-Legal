@@ -11,63 +11,37 @@
         </p>
       </div>
       <div class="form-element">
-        <form [formGroup]="form" (ngSubmit)="sendMail()">
+        <app-form [formGroup]="form">
+                <app-text-input fieldID="contact-name" label="Nombre Completo" type="text" [control]="name">
+                  <app-field-error error [validation]="(name.touched && name.value === '')" alert="Este campo es requerido" />
+                </app-text-input>
 
-          <div class="form-field">
-            <div class="input-container">
-              <input type="text" id="contact-name" formControlName="name" required>
-              <label for="contact-name">Nombre completo</label>
-              <div class="underline"></div>
-            </div>
-            <span class="form-error" [hidden]="!(name.touched && (name.value === '' || name.value === null))"><img src="/assets/icons/exclamacion.svg"
-                alt="">Este campo es requerido</span>
-          </div>
+              <div class="form-row">
+                <app-text-input fieldID="contact-email" label="Email" type="text" [control]="email">
+                    <app-field-error error [validation]="(email.touched && email.value === '')" alert="Este campo es requerido" />
+                    <app-field-error error [validation]="(email.dirty && email.invalid && email.value !== '')" alert="Ingresa un correo electrónico válido" />
+                </app-text-input>
 
-          <div class="form-row">
-            <div class="form-field">
-              <div class="input-container">
-                <input type="text" id="contact-email" formControlName="email" required>
-                <!-- <input type="text" id="contact-email" formControlName="email"  (blur)="onBlur(email)" required> -->
-                <label for="contact-email">Email</label>
-                <div class="underline"></div>
+                <app-text-input fieldID="contact-phone" label="Teléfono" type="phone" [control]="phone">
+                  <app-field-error error [validation]="(phone.touched && phone.value === '')" alert="Este campo es requerido" />
+                  <app-field-error error [validation]="(phone.dirty && phone.invalid && phone.value !== '')" alert="Ingresa un teléfono válido" />
+                </app-text-input>
               </div>
-              <span class="form-error" [hidden]="!(email.touched && (email.value === '' || email.value === null))"><img src="/assets/icons/exclamacion.svg" alt="">Este campo es requerido</span>
-              <span class="form-error" [hidden]="!(email.dirty && email.touched && email.invalid && email.value !== '')"><img src="/assets/icons/exclamacion.svg" alt=""> Ingresa un correo electrónico válido</span>
-            </div>
 
-            <div class="form-field">
-              <div class="input-container">
-                <input type="text" id="contact-phone" formControlName="phone" required>
-                <label for="contact-phone">Teléfono</label>
-                <div class="underline"></div>
+              <div class="form-row">
+                <div class="privacy-policy-field">
+                  <div class="input-container">
+                    <input type="checkbox" id="privacy-policy" formControlName="terms" required>
+                    <label for="privacy-policy">Aceptar <a href="">Políticas de privacidad</a></label>
+                  </div>
+
+                  <app-field-error [validation]="(terms.touched && terms.value !== true)" alert="Debes aceptar nuestras politicas de privacidad para poder enviar una pregunta"/>
+                </div>
               </div>
-                  <span class="form-error" [hidden]="!(phone.touched && (phone.value === '' || phone.value === null))"><img src="/assets/icons/exclamacion.svg" alt="">Este campo es requerido</span>
-                  <span class="form-error" [hidden]="!(phone.dirty && phone.invalid && phone.value !== '')"><img src="/assets/icons/exclamacion.svg" alt=""> Ingresa un teléfono válido</span>
-            </div>
-          </div>
 
-          <div class="form-field">
-            <div class="input-container">
-              <textarea name="" id="" cols="30" rows="1" id="contact-message" formControlName="question" required></textarea>
-              <label for="contact-message">Escribe tu pregunta acá</label>
-              <div class="underline"></div>
-            </div>
-            <span class="form-error" [hidden]="!(question.touched && (question.value === '' || question.value === null) )"><img src="/assets/icons/exclamacion.svg"
-                alt="">Este campo es requerido</span>
-          </div>
 
-          <div class="form-row">
-            <div class="privacy-policy-field">
-              <div class="input-container">
-                <input type="checkbox" id="privacy-policy" formControlName="terms" required>
-                <label for="privacy-policy">Aceptar <a href="">Políticas de privacidad</a></label>
-              </div>
-              <span class="form-error" [hidden]="!(terms.touched && terms.value !== true)"><img src="/assets/icons/exclamacion.svg" alt="">Debes aceptar nuestras politicas de privacidad para poder enviar una pregunta</span>
-            </div>
-
-            <button>Enviar pregunta <img class="arrow-icon" src="/assets/icons/redirection-arrow-black.svg" alt="ícono enviar pregunta"></button>
-          </div>
-        </form>
+              <button>Enviar pregunta <img class="arrow-icon" src="/assets/icons/redirection-arrow-black.svg" alt="ícono enviar pregunta"></button>
+        </app-form>
       </div>
     </div>
   </div>
