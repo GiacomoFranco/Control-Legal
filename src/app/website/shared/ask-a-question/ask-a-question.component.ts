@@ -12,11 +12,12 @@ import { TextInputComponent } from '../form/text-input/text-input.component';
 import { FieldErrorComponent } from '../form/field-error/field-error.component';
 import { CheckboxInputComponent } from '../form/checkbox-input/checkbox-input.component';
 import { TextareaInputComponent } from '../form/textarea-input/textarea-input.component';
+import { SubmitButtonComponent } from '../form/submit-button/submit-button.component';
 
 @Component({
   selector: 'app-ask-a-question',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent, CheckboxInputComponent, TextareaInputComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent, CheckboxInputComponent, TextareaInputComponent, SubmitButtonComponent],
   templateUrl: './ask-a-question.component.html',
   styleUrl: './ask-a-question.component.scss',
 })
