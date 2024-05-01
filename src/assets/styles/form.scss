@@ -1,171 +1,58 @@
 @mixin form {
-  form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  min-width: 23rem;
+
+  .input-container {
     display: flex;
     flex-direction: column;
-    font-size: var(--fs-300);
+    position: relative;
 
-    >div:nth-last-child(2) {
-      margin-bottom: 3.5rem;
-    }
-
-    .form-field {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem;
-      min-width: 23rem;
-
-      .input-container {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-
-        input:not([type="checkbox"]) {
-          outline: none;
-          min-height: 5.6rem;
-          background-color: transparent;
-          border: none;
-          border-bottom: .15rem solid var(--light-green-outline);
-          resize: none;
-          color: var(--main-white);
-
-          &:focus~label,
-          &:valid~label {
-            opacity: 1;
-            top: -1.3rem;
-            color: var(--light-green);
-            scale: .8;
-            transition: all .3s ease;
-          }
-
-          &:focus~.underline,
-          &:valid~.underline {
-            width: 100%;
-            transition: all .3s ease;
-          }
-
-        }
-
-        input[type="checkbox"] {
-          color: red;
-        }
-
-        textarea {
-          padding-top: 1.5rem;
-          @extend input;
-        }
-
-        label {
-          opacity: .3;
-          transform-origin: top left;
-          position: absolute;
-          pointer-events: none;
-          transition: all .3s ease;
-          top: 1.5rem;
-        }
-
-        .underline {
-          border-radius: 99rem;
-          position: absolute;
-          bottom: 0;
-          height: .2rem;
-          width: 0%;
-          background-color: var(--light-green);
-          transition: all .3s ease;
-        }
-      }
-
-      .hidden {
-        visibility: hidden;
-      }
-
-    }
-
-    .privacy-policy-field {
-      display: flex;
-      flex-grow: 5;
-      margin-right: auto;
-      flex-direction: column;
-      align-items: start;
-
-      .input-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        input {
-          width: 1.5rem;
-          border: none;
-          outline: none;
-          cursor: pointer;
-
-          &:autofill {
-            background: transparent;
-          }
-        }
-
-        label {
-          user-select: none;
-          cursor: pointer;
-
-          a {
-            font-weight: 500;
-            color: var(--light-green);
-          }
-        }
-      }
-    }
-
-    .form-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 0 clamp(2.5rem, 3vw, 6rem);
-      flex-wrap: wrap;
-
-      &:last-child {
-        gap: 2.5rem;
-      }
-    }
-
-    .form-error {
-      margin-top: .5rem;
-      transform-origin: top left;
-      color: var(--light-brown);
-      scale: .8;
-      display: flex;
-      gap: 1rem;
-      max-width: 40rem;
-
-      &[hidden] {
-        display: none !important;
-      }
-
-      img {
-        width: 1.8rem;
-        align-self: baseline;
-        margin-top: .2rem;
-      }
-    }
-
-    button {
-      flex-grow: 1;
-      flex-basis: 20rem;
-      background-color: var(--light-green);
-      color: var(--dark-green-secondary);
-      font-weight: 400 !important;
+    input, textarea {
+      outline: none;
+      min-height: 5.6rem;
+      background-color: transparent;
       border: none;
-      border-radius: 99rem;
-      padding: 1.5rem;
-      max-height: 4.8rem;
+      border-bottom: .15rem solid var(--light-green-outline);
+      resize: none;
+      color: var(--main-white);
 
-      cursor: pointer;
-
-      img {
-        margin-left: .6rem;
-        width: .9rem;
+      &:focus~label,
+      &:valid~label {
+        opacity: 1;
+        top: -1.3rem;
+        color: var(--light-green);
+        scale: .8;
+        transition: all .3s ease;
       }
+
+      &:focus~.underline,
+      &:valid~.underline {
+        width: 100%;
+        transition: all .3s ease;
+      }
+
     }
 
+    label {
+      opacity: .3;
+      transform-origin: top left;
+      position: absolute;
+      pointer-events: none;
+      transition: all .3s ease;
+      top: 1.5rem;
+    }
+
+    .underline {
+      border-radius: 99rem;
+      position: absolute;
+      bottom: 0;
+      height: .2rem;
+      width: 0%;
+      background-color: var(--light-green);
+      transition: all .3s ease;
+    }
   }
 }

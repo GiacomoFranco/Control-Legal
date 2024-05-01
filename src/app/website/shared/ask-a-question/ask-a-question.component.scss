@@ -1,5 +1,4 @@
 @import 'mixins';
-@import 'form';
 
 :host {
   .ask-a-question {
@@ -33,7 +32,6 @@
         width: 100%;
         max-width: calc(50% + 5rem);
 
-        @include form;
       }
 
       @include custom-breakpoint(1200) {

@@ -1,72 +1,8 @@
+@import 'form';
 :host {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  min-width: 23rem;
+  @include form;
 
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    input:not([type="checkbox"]) {
-      outline: none;
-      min-height: 5.6rem;
-      background-color: transparent;
-      border: none;
-      border-bottom: .15rem solid var(--light-green-outline);
-      resize: none;
-      color: var(--main-white);
-
-      &:focus~label,
-      &:valid~label {
-        opacity: 1;
-        top: -1.3rem;
-        color: var(--light-green);
-        scale: .8;
-        transition: all .3s ease;
-      }
-
-      &:focus~.underline,
-      &:valid~.underline {
-        width: 100%;
-        transition: all .3s ease;
-      }
-
-    }
-
-    input[type="checkbox"] {
-      color: red;
-    }
-
-    textarea {
-      padding-top: 1.5rem;
-      @extend input;
-    }
-
-    label {
-      opacity: .3;
-      transform-origin: top left;
-      position: absolute;
-      pointer-events: none;
-      transition: all .3s ease;
-      top: 1.5rem;
-    }
-
-    .underline {
-      border-radius: 99rem;
-      position: absolute;
-      bottom: 0;
-      height: .2rem;
-      width: 0%;
-      background-color: var(--light-green);
-      transition: all .3s ease;
-    }
+  textarea {
+    padding-top: 1.5rem;
   }
-
-  .hidden {
-    visibility: hidden;
-  }
-
 }
