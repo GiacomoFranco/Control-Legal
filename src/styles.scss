@@ -25,6 +25,7 @@
   --main-white: #FFFFFF;
   --light-green-outline: #3B4E50;
   --light-gray: #4F4F53;
+  --light-brown: #F5DCB3;
 
   --fs-900: 2.9rem;
   --fs-800: 6.3rem;
@@ -90,7 +91,7 @@ h1 {
 h2 {
   @include custom-heading(var(--fs-600), var(--fs-600));
 
-  @include custom-breakpoint(500){
+  @include custom-breakpoint(500) {
     @include custom-heading(var(--fs-500), var(--fs-500));
   }
 }
@@ -106,6 +107,12 @@ a {
   font-size: var(--fs-200);
   font-weight: 400;
   text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+  appearance: initial;
 }
 
 .highlight-text {

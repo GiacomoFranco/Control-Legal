@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-300);
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 clamp(2.5rem, 3vw, 6rem);
+    flex-wrap: wrap;
+
+    &:last-child {
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+    }
+  }
+
+  button {
+    flex-grow: 1;
+    flex-basis: 20rem;
+    background-color: var(--light-green);
+    color: var(--dark-green-secondary);
+    font-weight: 400 !important;
+    border: none;
+    border-radius: 99rem;
+    padding: 1.5rem;
+    max-height: 4.8rem;
+
+    cursor: pointer;
+
+    img {
+      margin-left: .6rem;
+      width: .9rem;
+    }
+  }
+}

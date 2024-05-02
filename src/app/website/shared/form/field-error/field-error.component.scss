@@ -1,0 +1,19 @@
+.form-error {
+  margin-top: .5rem;
+  transform-origin: top left;
+  color: var(--light-brown);
+  scale: .8;
+  display: flex;
+  gap: 1rem;
+  max-width: 40rem;
+
+  &[hidden] {
+    display: none !important;
+  }
+
+  img {
+    width: 1.8rem;
+    align-self: baseline;
+    margin-top: .2rem;
+  }
+}
