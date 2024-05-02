@@ -6,20 +6,9 @@
   align-items: start;
 
   .input-container {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
 
     input {
-      width: 1.5rem;
-      border: none;
-      outline: none;
-      cursor: pointer;
-
-      &:autofill {
-        background: transparent;
-      }
+      display: none;
     }
 
     label {
@@ -29,6 +18,34 @@
       a {
         font-weight: 500;
         color: var(--light-green);
+      }
+    }
+
+    input+label {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 1rem;
+
+      &::before {
+        display: flex;
+        content: '';
+        background-color: white;
+        border-radius: .3rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: all .1s ease-out;
+        background-position: center;
+      }
+    }
+
+    input:checked+label {
+      &::before {
+        background-color: var(--light-green);
+        background-image: url('src/assets/icons/check.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: all .1s ease-out;
       }
     }
   }
