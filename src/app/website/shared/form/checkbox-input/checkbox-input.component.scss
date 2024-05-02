@@ -18,6 +18,8 @@
       a {
         font-weight: 500;
         color: var(--light-green);
+        font-size: 1.7rem;
+        margin-left: .6rem;
       }
     }
 
@@ -25,7 +27,6 @@
       display: flex;
       justify-content: start;
       align-items: center;
-      gap: 1rem;
 
       &::before {
         display: flex;
@@ -36,6 +37,7 @@
         height: 1.5rem;
         transition: all .1s ease-out;
         background-position: center;
+        margin-right: 1rem;
       }
     }
 
