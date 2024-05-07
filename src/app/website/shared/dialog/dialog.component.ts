@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DialogService } from '@app/website/services/dialog.service';
 
 @Component({
   selector: 'app-dialog',
@@ -6,13 +7,15 @@ import { Component, Input } from '@angular/core';
   imports: [],
   template: `
     <div class="section-container">
-      <span class="dialog" [style.backgroundColor]="error ? 'var(--light-brown)' : 'var(--mint-green)'">
+      <span
+        class="dialog"
+        [style.backgroundColor]="
+          error ? 'var(--light-brown)' : 'var(--mint-green)'
+        "
+      >
         @if (error) {
         <div class="message">
-          <img
-            src="/assets/icons/error-alert.svg"
-            alt="Alerta de error"
-          />
+          <img src="/assets/icons/error-alert.svg" alt="Alerta de error" />
           <p>
             Presentamos un error al enviar la pregunta, contacta al
             administrador e informale sobre el error <b>{{ error }}</b>
@@ -20,10 +23,7 @@ import { Component, Input } from '@angular/core';
         </div>
         } @else {
         <div class="message">
-          <img
-            src="/assets/icons/check-alert.svg"
-            alt="Correo enviado"
-          />
+          <img src="/assets/icons/check-alert.svg" alt="Correo enviado" />
           <p>
             Tu pregunta se ha enviado con éxito, pronto nos comunicaremos
             contigo
@@ -34,6 +34,7 @@ import { Component, Input } from '@angular/core';
           class="close-button"
           src="/assets/icons/close.svg"
           alt="Cerrar alerta"
+          (click)="closeDialog()"
         />
       </span>
     </div>
@@ -41,5 +42,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './dialog.component.scss',
 })
 export class DialogComponent {
-  @Input() error: string | number;
+  @Input('errorCode') error: string | number;
+
+  constructor(private dialogService: DialogService) {}
+
+  closeDialog() {
+    this.dialogService.closeDialog();
+  }
 }
