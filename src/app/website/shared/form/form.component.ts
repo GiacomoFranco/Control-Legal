@@ -1,17 +1,22 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import {
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DialogComponent } from '../dialog/dialog.component';
+import { DialogService } from '@app/website/services/dialog.service';
+import { Subscription } from 'rxjs';
+import { MailSenderService } from '@app/website/services/mail-sender.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, DialogComponent],
   template: `
     <form [formGroup]="form" (ngSubmit)="sendMail()">
       <ng-content></ng-content>
     </form>
+    @if(dialogState) {
+    <app-dialog [errorCode]="errorReponse" />
+    }
   `,
   styleUrl: './form.component.scss',
   encapsulation: ViewEncapsulation.None,
@@ -19,8 +24,40 @@ import {
 export class FormComponent {
   @Input('formGroup') form: FormGroup = new FormGroup({});
 
+  dialogState = false;
+  listenDialogState: Subscription;
+  errorReponse: string | number;
+
+  constructor(
+    private mailService: MailSenderService,
+    private dialogService: DialogService
+  ) {
+    this.listenDialogState = this.dialogService.dialogOpen$.subscribe(
+      (state) => {
+        this.dialogState = state;
+      }
+    );
+  }
+
   sendMail() {
     this.form.markAllAsTouched();
-    console.log(this.form.value);
+
+    if (this.form.valid) {
+      this.mailService.sendQuestion(this.form.value).subscribe(
+        () => {
+          this.dialogService.openDialog();
+        },
+        (err: HttpErrorResponse) => {
+          this.errorReponse = err.status;
+          this.dialogService.openDialog();
+        }
+      );
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.listenDialogState) {
+      this.listenDialogState.unsubscribe();
+    }
   }
 }

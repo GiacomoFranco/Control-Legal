@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormComponent } from '../form/form.component';
 import {
@@ -22,9 +21,7 @@ import { SubmitButtonComponent } from '../form/submit-button/submit-button.compo
   styleUrl: './ask-a-question.component.scss',
 })
 export class AskAQuestionComponent {
-  constructor(private http: HttpClient) {}
-
-  readonly API_URL: string = import.meta.env['NG_APP_API_URL'];
+  constructor() {}
 
   public form: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -56,22 +53,5 @@ export class AskAQuestionComponent {
   }
   get terms(): FormControl {
     return this.form.get('terms') as FormControl;
-  }
-
-  sendMail() {
-    this.form.markAllAsTouched();
-
-    console.log(this.form.value);
-
-    const mensaje = {
-        name: this.form.value.name,
-        email: this.form.value.email,
-        phone: this.form.value.phone,
-        question: this.form.value.question,
-    };
-
-    // this.http
-    //   .post<any>(`${this.API_URL}send-email`, mensaje)
-    //   .subscribe((res) => console.log(res));
   }
 }
