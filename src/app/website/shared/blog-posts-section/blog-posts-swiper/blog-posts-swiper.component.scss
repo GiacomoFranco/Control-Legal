@@ -1,0 +1,13 @@
+@import 'swiper';
+
+:host {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 200px;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @include swiper(42.4rem);
+}
