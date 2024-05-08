@@ -1,0 +1,26 @@
+@import 'mixins';
+
+:host {
+  .blog-posts {
+    padding: 11.5rem 0 7.8rem 0;
+
+    @include for-tablet-portrait {
+      padding: 11.5rem 0 4.8rem 0;
+    }
+
+    .section-container {
+      .content {
+        flex-direction: column;
+
+        .title-element {
+          max-width: 73rem;
+        }
+
+        .posts-element {
+          display: flex;
+          margin-top: 5rem;
+        }
+      }
+    }
+  }
+}
