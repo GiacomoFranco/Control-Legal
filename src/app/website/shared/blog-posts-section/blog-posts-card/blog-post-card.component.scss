@@ -1,0 +1,111 @@
+:host {
+  display: flex;
+  flex-grow: 1;
+  height: 42.4rem;
+
+  a,
+  .skeleton {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    gap: 2rem;
+    border: 1PX SOLID RED;
+    height: 100%;
+
+
+    // .member-image {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   position: relative;
+    //   overflow: hidden;
+    //   height: 47.2rem;
+
+    //   &__skeleton {
+    //     @extend .member-image;
+    //     background-color: var(--dark-green-secondary);
+    //   }
+
+    //   img {
+    //     height: 100%;
+    //     width: 100%;
+    //     object-fit: cover;
+    //     filter: grayscale(1);
+    //   }
+
+    //   &::after {
+    //     content: '';
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: #05292C;
+    //     opacity: .49;
+    //     position: absolute;
+    //     z-index: 1;
+    //   }
+    // }
+
+    // .member-info {
+
+    //   container-type: inline-size;
+
+    //   &__skeleton {
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex-grow: 1;
+
+    //     .member-name__skeleton {
+    //       background-color: var(--dark-green-secondary);
+    //       border-radius: 99rem;
+    //       opacity: .6;
+    //       height: 2.3rem;
+    //       margin-bottom: 1.3rem;
+    //       max-width: 33rem;
+    //     }
+
+    //     .member-charge__skeleton {
+    //       border-radius: 99rem;
+    //       background-color: var(--dark-green-secondary);
+    //       opacity: .4;
+    //       height: 1.6rem;
+    //     }
+    //   }
+
+    //   .member-name {
+    //     position: relative;
+    //     font-size: var(--fs-400);
+    //     font-weight: 700;
+    //     margin-bottom: .5rem;
+    //     overflow: hidden;
+    //     white-space: nowrap;
+    //     text-overflow: clip;
+    //     width: 100%;
+
+    //     &::after {
+    //       content: '';
+    //       width: 3rem;
+    //       height: 100%;
+    //       background: linear-gradient(to right, transparent, var(--main-black));
+    //       position: absolute;
+    //       right: 0;
+    //     }
+    //   }
+
+    //   .member-charge {
+    //     --max-lines: 2;
+    //     display: -webkit-box;
+    //     overflow: hidden;
+    //     -webkit-box-orient: vertical;
+    //     -webkit-line-clamp: var(--max-lines);
+
+    //     // font-size: var(--fs-300);
+    //     font-size: clamp(var(--fs-200), 19cqi, var(--fs-300));
+    //     font-weight: 300;
+    //     color: #5D6E6F;
+    //     max-width: 47rem;
+    //   }
+    // }
+  }
+
+}
