@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="error-alert" transform="translate(-690 -9861)">
+    <g id="Elipse_23" data-name="Elipse 23" transform="translate(690 9861)" fill="none" stroke="#021c1e" stroke-width="1">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11.5" fill="none"/>
+    </g>
+    <path id="Trazado_242" data-name="Trazado 242" d="M11.9,5a.857.857,0,0,0-.9.806V12.25a.906.906,0,0,0,1.8,0V5.806A.857.857,0,0,0,11.9,5Z" transform="translate(690 9862)" fill="#021f21"/>
+    <rect id="Rectángulo_220" data-name="Rectángulo 220" width="1.8" height="2.632" rx="0.9" transform="translate(701 9876.213)" fill="#021f21"/>
+  </g>
+</svg>
