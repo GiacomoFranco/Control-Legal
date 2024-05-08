@@ -1,4 +1,4 @@
-import { Image } from './photo.interface';
+import { Image } from './image.interface';
 
 export interface Member {
   id: number;
