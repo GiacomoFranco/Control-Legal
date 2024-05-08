@@ -16,7 +16,6 @@ export class TeamMembersService {
   constructor(private http: HttpClient) {
     if (isPlatformBrowser(this.platformId)) {
       if (!this.members$) {
-        console.log('fetching');
         this.fetchMembers();
       }
     }
