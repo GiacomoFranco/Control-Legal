@@ -85,4 +85,48 @@
     }
   }
 
+  .skeleton {
+    background-color: var(--dark-green-secondary);
+
+    .thumbnail-element {
+      .category-tag {
+        width: 12rem;
+        height: 2.5rem;
+        opacity: .2;
+      }
+    }
+
+    .info-element {
+      opacity: .02;
+
+      .post-title {
+        width: 90%;
+        height: 2rem;
+        border-radius: 99rem;
+        background-color: var(--main-black);
+        opacity: .8;
+
+        &-under {
+          @extend .post-title;
+          width: 70%;
+        }
+      }
+
+      .detail-info {
+        .post-author {
+          @extend .post-title;
+          height: 1.5rem;
+          width: 25%;
+        }
+
+        .post-date {
+          @extend .post-title;
+          height: 1.5rem;
+          width: 25%;
+        }
+      }
+
+    }
+  }
+
 }

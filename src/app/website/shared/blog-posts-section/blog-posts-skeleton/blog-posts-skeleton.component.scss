@@ -1,0 +1,29 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+
+  .skeleton-card {
+
+    // Los siguientes breakpoints coinciden
+    // con los seteados para el swiper para
+    // que el numero de cards de la grid coincida
+    // con el del swiper al inicializarlo
+
+    @include custom-breakpoint(1470) {
+      &:nth-child(1) {
+        display: none;
+      }
+    }
+
+    @include custom-breakpoint(800) {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+}

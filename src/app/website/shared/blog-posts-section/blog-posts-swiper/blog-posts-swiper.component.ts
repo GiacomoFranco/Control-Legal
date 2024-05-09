@@ -46,7 +46,7 @@ export class BlogPostsSwiperComponent {
       slidesPerGroup: 1,
       spaceBetween: 20,
       autoplay: {
-        delay: 5000,
+        delay: 8000,
         pauseOnMouseEnter: true,
       },
       navigation: {

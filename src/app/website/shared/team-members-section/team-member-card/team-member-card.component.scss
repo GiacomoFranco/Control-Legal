@@ -95,7 +95,6 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: var(--max-lines);
 
-        // font-size: var(--fs-300);
         font-size: clamp(var(--fs-200), 19cqi, var(--fs-300));
         font-weight: 300;
         color: #5D6E6F;
