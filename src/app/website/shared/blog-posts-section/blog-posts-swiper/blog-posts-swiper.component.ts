@@ -54,17 +54,13 @@ export class BlogPostsSwiperComponent {
         prevEl: `#${this.swiperID}-prev-control`,
       },
       breakpoints: {
-        700: {
+        800: {
           slidesPerView: 2,
           slidesPerGroup: 2,
         },
-        900: {
+        1470: {
           slidesPerView: 3,
           slidesPerGroup: 3,
-        },
-        1300: {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
         },
       },
       on: {

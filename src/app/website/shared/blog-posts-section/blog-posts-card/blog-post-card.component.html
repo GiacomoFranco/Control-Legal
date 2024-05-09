@@ -1,24 +1,24 @@
 @if (post) {
-<a [routerLink]="['/blog/post/', post.slug]">
-  <div class="thumbnail-element">
-    <span class="category-tag">{{ post.category }}</span>
-    <img [src]="post.thumbnail.url" [alt]="post.thumbnail.alt">
-  </div>
-  <div class="info-element">
-    <h3>{{ post.title }}</h3>
-    <div class="detail-info">
-      <p>{{ post.author }}</p>
-      <p>{{ post.date }}</p>
+  <a [routerLink]="['/blog/post/', post.slug]">
+    <div class="thumbnail-element">
+      <span class="category-tag">{{ post.category }}</span>
+      <img [src]="post.thumbnail.url" [alt]="post.thumbnail.alt">
+    </div>
+    <div class="info-element">
+      <h3>{{ post.title }}</h3>
+      <div class="detail-info">
+        <p>{{ post.author }}</p>
+        <p>{{ post.date }}</p>
+      </div>
+    </div>
+  </a>
+} @else {
+  <div class="skeleton">
+    <div class="member-image__skeleton">
+    </div>
+    <div class="member-info__skeleton">
+      <span class="member-name__skeleton"></span>
+      <span class="member-charge__skeleton"></span>
     </div>
   </div>
-</a>
-} @else {
-<div class="skeleton">
-  <div class="member-image__skeleton">
-  </div>
-  <div class="member-info__skeleton">
-    <span class="member-name__skeleton"></span>
-    <span class="member-charge__skeleton"></span>
-  </div>
-</div>
 }
