@@ -41,7 +41,7 @@ export class TeamMembersSwiperComponent implements AfterViewInit, OnDestroy {
   platformId: Object = inject(PLATFORM_ID);
 
   initSwiper(): void {
-    this.swiper = new Swiper('.swiper', {
+    this.swiper = new Swiper(`#${this.swiperID}`, {
       modules: [Navigation, Autoplay],
       slidesPerView: 1,
       slidesPerGroup: 1,
@@ -96,7 +96,7 @@ export class TeamMembersSwiperComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.swiper.off('breakpoint');
+      // this.swiper.off('breakpoint');
     }
   }
 }

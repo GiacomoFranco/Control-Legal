@@ -40,7 +40,7 @@ export class BlogPostsSwiperComponent {
   platformId: Object = inject(PLATFORM_ID);
 
   initSwiper(): void {
-    this.swiper = new Swiper('.swiper', {
+    this.swiper = new Swiper(`#${this.swiperID}`, {
       modules: [Navigation, Autoplay],
       slidesPerView: 1,
       slidesPerGroup: 1,
