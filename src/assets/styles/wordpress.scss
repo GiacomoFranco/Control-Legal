@@ -1,0 +1,24 @@
+.rich-text::ng-deep {
+
+  strong {
+    color: white;
+  }
+
+  h3 {
+    font-size: var(--fs-400) !important;
+    text-decoration: underline var(--light-green);
+    color: white;
+    text-underline-offset: .8rem;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    margin-bottom: 1lh;
+  }
+
+  @supports not (margin-bottom: 1lh) {
+    p {
+      margin-bottom: 1.9rem;
+    }
+  }
+}

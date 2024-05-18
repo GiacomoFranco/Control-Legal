@@ -2,7 +2,23 @@
   <section class="banner">
     <article class="section-container">
       <div class="content">
-        <h1>Integrante del equipo</h1>
+        @if (member$ | async ; as member ) {
+          <div class="photo-element">
+            <div class="member-image">
+              <img [src]="member.photo.url" [alt]="member.photo.alt">
+            </div>
+          </div>
+          <div class="content-element">
+            <div class="summary">
+              <h1>{{ member.name }}</h1>
+              <h2>{{ member.charge }}</h2>
+              <hr>
+              <p>{{ member.summary }}</p>
+            </div>
+            <div [innerHTML]="member.content" class="rich-text">
+            </div>
+          </div>
+        }
       </div>
     </article>
   </section>
