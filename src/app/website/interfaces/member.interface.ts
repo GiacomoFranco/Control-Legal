@@ -5,5 +5,7 @@ export interface Member {
   slug: string;
   name: string;
   charge: string;
+  summary?: string;
+  content?: string;
   photo: Image;
 }
