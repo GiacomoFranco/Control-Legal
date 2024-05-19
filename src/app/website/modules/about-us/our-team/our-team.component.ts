@@ -1,14 +1,15 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Member } from '@app/website/interfaces/member.interface';
 import { TeamMemberService } from '@app/website/services/team-member.service';
+import { TeamMembersSectionComponent } from '@app/website/shared/team-members-section/team-members-section.component';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-our-team',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, TeamMembersSectionComponent],
   templateUrl: './our-team.component.html',
   styleUrl: './our-team.component.scss'
 })
