@@ -1,9 +1,12 @@
+@import 'mixins';
+
 :host {
   .section-container {
-    padding: 6rem 0;
+    padding: 6rem 0 5rem 0;
     display: flex;
     gap: 2rem;
     align-items: center;
+    flex-wrap: wrap;
 
     a {
       position: relative;
@@ -41,6 +44,12 @@
 
     img {
       user-select: none;
+    }
+  }
+
+  @include for-phone-only {
+    .section-container {
+    padding: 4rem 0 3rem 0;
     }
   }
 }

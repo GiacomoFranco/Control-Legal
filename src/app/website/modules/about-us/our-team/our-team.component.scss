@@ -18,11 +18,6 @@
         height: 61.2rem;
         top: 3rem;
 
-        @include for-phone-only {
-          height: initial;
-          aspect-ratio: 1 / 1.3
-        }
-
         &__skeleton {
           @extend .member-image;
           background-color: var(--dark-green-secondary);
@@ -87,6 +82,18 @@
 
         .member-image {
           height: 60.2rem;
+        }
+
+      }
+    }
+
+    @include for-phone-only {
+      .photo-element {
+
+        .member-image {
+          height: initial;
+          aspect-ratio: 1 / 1.3;
+          height: initial;
         }
 
       }
