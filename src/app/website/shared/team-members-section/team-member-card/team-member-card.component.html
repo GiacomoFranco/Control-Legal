@@ -1,5 +1,5 @@
 @if (member) {
-  <a [routerLink]="['sobre-nosotros/nuestro-equipo', member.slug]" >
+  <a [routerLink]="['/sobre-nosotros/nuestro-equipo', member.slug]" >
     <div class="member-image">
       <img [src]="member.photo.url" [alt]="member.photo.alt">
       <app-redirection-button [iconAltProp]="'Ver miembro del equipo'" />
