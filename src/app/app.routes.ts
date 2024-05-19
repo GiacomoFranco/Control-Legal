@@ -23,6 +23,7 @@ export const routes: Routes = [
       import('./website/modules/about-us/about-us.module').then(
         (m) => m.AboutUsModule
       ),
+    data: { breadcrumb: 'Nosotros' },
   },
   {
     title: 'Blog',

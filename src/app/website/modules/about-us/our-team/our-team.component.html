@@ -1,23 +1,26 @@
 <main>
-  <section class="banner">
+  @if (member$ | async ; as member ) {
+  <app-breadcrumb [slug]="member.name" />
+  }
+  <section class="member-content">
     <article class="section-container">
       <div class="content">
         @if (member$ | async ; as member ) {
-          <div class="photo-element">
-            <div class="member-image">
-              <img [src]="member.photo.url" [alt]="member.photo.alt">
-            </div>
+        <div class="photo-element">
+          <div class="member-image">
+            <img [src]="member.photo.url" [alt]="member.photo.alt">
           </div>
-          <div class="content-element">
-            <div class="summary">
-              <h1>{{ member.name }}</h1>
-              <h2>{{ member.charge }}</h2>
-              <hr>
-              <p>{{ member.summary }}</p>
-            </div>
-            <div [innerHTML]="member.content" class="rich-text">
-            </div>
+        </div>
+        <div class="content-element">
+          <div class="summary">
+            <h1>{{ member.name }}</h1>
+            <h2>{{ member.charge }}</h2>
+            <hr>
+            <p>{{ member.summary }}</p>
           </div>
+          <div [innerHTML]="member.content" class="rich-text">
+          </div>
+        </div>
         }
       </div>
     </article>
