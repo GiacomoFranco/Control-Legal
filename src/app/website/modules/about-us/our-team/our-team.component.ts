@@ -28,7 +28,5 @@ export class OurTeamComponent {
       }
       this.member$ = this.teamMemberService.getMember();
     });
-
-    this.member$.subscribe(res => console.log(res))
   }
 }
