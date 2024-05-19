@@ -4,20 +4,35 @@
     color: white;
   }
 
-  h3 {
-    font-size: var(--fs-400) !important;
+  h1, h2, h3, h4, h5, h6 {
     text-decoration: underline var(--light-green);
-    color: white;
+    color: var(--light-green);
     text-underline-offset: .8rem;
     margin-bottom: 3rem;
   }
 
-  p {
+  h1 {
+    font-size: var(--fs-600);
+  }
+
+  h2 {
+    font-size: var(--fs-500);
+  }
+
+  h3 {
+    font-size: var(--fs-400);
+  }
+
+  p, ul {
     margin-bottom: 1lh;
   }
 
+  ul {
+    padding-left: 3rem;
+  }
+
   @supports not (margin-bottom: 1lh) {
-    p {
+    p, ul {
       margin-bottom: 1.9rem;
     }
   }

@@ -96,7 +96,7 @@ h2 {
   }
 }
 
-p {
+p, ul {
   font-size: var(--fs-300);
   line-height: calc(var(--fs-300) + .1rem);
   color: var(--opaque-white);
