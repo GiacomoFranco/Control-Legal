@@ -34,18 +34,6 @@
           width: 100%;
           object-fit: cover;
         }
-
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 100%;
-          background-color: #05292C;
-          opacity: .3;
-          position: absolute;
-          z-index: 1;
-
-        }
       }
     }
 

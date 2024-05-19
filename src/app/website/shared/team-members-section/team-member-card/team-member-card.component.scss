@@ -3,7 +3,8 @@
   flex-grow: 1;
   height: 57.3rem;
 
-  a, .skeleton {
+  a,
+  .skeleton {
     display: flex !important;
     flex-direction: column;
     justify-content: flex-start;
@@ -103,4 +104,19 @@
     }
   }
 
+  .activo {
+    .member-image {
+      img {
+        filter: grayscale(0);
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    .member-name{
+      color: var(--light-green);
+    }
+  }
 }
