@@ -47,9 +47,32 @@
     }
   }
 
+  .skeleton {
+    display: flex;
+    flex-basis: 50rem;
+    gap: 2rem;
+
+    div {
+      border-radius: 99rem;
+      background-color: #205357;
+      opacity: .2;
+      height: 2rem;
+    }
+
+    div:nth-child(1) {
+      flex-basis: 30rem;
+    }
+    div:nth-child(2) {
+      flex-basis: 10rem;
+    }
+    div:nth-child(3) {
+      flex-basis: 15rem;
+    }
+  }
+
   @include for-phone-only {
     .section-container {
-    padding: 4rem 0 3rem 0;
+      padding: 4rem 0 3rem 0;
     }
   }
 }

@@ -1,6 +1,8 @@
 <main>
   @if (member$ | async ; as member ) {
   <app-breadcrumb [slug]="member.name" />
+  } @else {
+  <app-breadcrumb />
   }
   <section class="member-content">
     <article class="section-container">
@@ -19,6 +21,22 @@
             <p>{{ member.summary }}</p>
           </div>
           <div [innerHTML]="member.content" class="rich-text">
+          </div>
+        </div>
+        } @else {
+        <div class="photo-element">
+          <div class="member-image__skeleton"></div>
+        </div>
+        <div class="content-element">
+          <div class="summary__skeleton">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="rich-text__skeleton">
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </div>
         }
