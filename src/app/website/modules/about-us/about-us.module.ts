@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { OurTeamComponent } from './our-team/our-team.component';
+import { MemberComponent } from './member/member.component';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'nuestro-equipo/:slug',
-    component: OurTeamComponent,
+    component: MemberComponent,
     data: { breadcrumb: 'Nuestro equipo', url: '../../' },
   },
 ];
@@ -26,7 +26,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     AboutUsComponent,
-    OurTeamComponent,
+    MemberComponent,
     RouterModule.forChild(routes),
   ],
 })

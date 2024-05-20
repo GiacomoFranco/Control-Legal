@@ -18,10 +18,10 @@ import { Observable } from 'rxjs';
     AskAQuestionComponent,
     BreadcrumbComponent,
   ],
-  templateUrl: './our-team.component.html',
-  styleUrl: './our-team.component.scss',
+  templateUrl: './member.component.html',
+  styleUrl: './member.component.scss',
 })
-export class OurTeamComponent {
+export class MemberComponent {
   member$: Observable<Member>;
   slugIntegrante: string;
 
