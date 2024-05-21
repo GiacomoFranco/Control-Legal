@@ -1,0 +1,11 @@
+a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2.3rem;
+
+  img {
+    width: .8rem;
+    aspect-ratio: 1 / 1;
+  }
+}
