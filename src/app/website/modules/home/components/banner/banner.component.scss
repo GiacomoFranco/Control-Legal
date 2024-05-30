@@ -1,0 +1,110 @@
+@import 'mixins';
+
+:host {
+  .banner {
+    min-height: min(90rem, 100vh);
+    background-image: url('/assets/images/banner-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right bottom 4.8rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100vw;
+      position: absolute;
+      background: radial-gradient(ellipse 20% 19% at 143% -4%,
+          rgba(0, 0, 0, 0) 0%,
+          rgb(2, 28, 30) 586%)
+    }
+
+    .content {
+      flex-direction: column;
+      gap: 3rem;
+
+      .main-element {
+        display: flex;
+        flex-basis: 70rem;
+        align-items: center;
+
+        .main-content {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          margin-top: 10rem;
+          container-type: inline-size;
+          width: 100%;
+
+          .supp-title {
+            color: var(--light-green);
+            border-left: .1rem solid var(--light-green);
+            opacity: .48;
+            padding-left: 1.6rem;
+            margin-bottom: .5rem;
+          }
+
+          h1 {
+            display: flex;
+            flex-direction: column;
+            font-size: clamp(4.4rem, 4.9cqi, 7.6rem);
+            margin-bottom: 1rem;
+            max-width: 93rem;
+          }
+
+          .main-text {
+            max-width: 70rem;
+            color: var(--opaque-white-desc);
+          }
+
+          app-redirection {
+            margin-top: 4rem;
+          }
+        }
+      }
+
+      .services-element {
+        --common-border: .1rem solid #7070706b;
+        display: flex;
+        z-index: 1;
+        flex-wrap: wrap;
+
+        .service-preview {
+          border-top: var(--common-border);
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          width: 25%;
+          container-type: inline-size;
+
+          &:not(:last-child) {
+            border-right: var(--common-border);
+          }
+
+          h4 {
+            font-size: clamp(1.6rem, 6cqi, var(--fs-400));
+            color: var(--main-white);
+            margin-bottom: .7rem;
+          }
+
+          p {
+            font-size: clamp(1.6rem, 6cqi, var(--fs-300));
+            color: var(--opaque-white-desc);
+          }
+
+          @include custom-breakpoint(1265) {
+            width: 50%;
+
+            &:not(:last-child) {
+              border-right: initial;
+            }
+
+            &:nth-child(odd) {
+              border-right: var(--common-border);
+            }
+          }
+        }
+      }
+    }
+  }
+}
