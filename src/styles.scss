@@ -22,6 +22,7 @@
   --light-green: #6EB98E;
   --mint-green: #B4F6D0;
   --opaque-white: #BFC6C6;
+  --opaque-white-desc: #5D6E6F;
   --main-white: #FFFFFF;
   --light-green-outline: #3B4E50;
   --light-gray: #4F4F53;
@@ -29,7 +30,7 @@
 
   --fs-900: 2.9rem;
   --fs-800: 6.3rem;
-  --fs-700: 7.6rem;
+  --fs-700: clamp(4.4rem, 4.9cqi, 7.6rem);
   --fs-600: 4.4rem;
   --fs-500: 3.3rem;
   --fs-400: 2.2rem;
