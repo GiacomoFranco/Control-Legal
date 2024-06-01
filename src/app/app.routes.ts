@@ -12,7 +12,7 @@ export const routes: Routes = [
     title: 'Servicios',
     path: 'servicios',
     loadChildren: () =>
-      import('./website/modules/services/services.module').then(
+      import('./website/modules/legal-services/services.module').then(
         (m) => m.ServicesModule
       ),
   },

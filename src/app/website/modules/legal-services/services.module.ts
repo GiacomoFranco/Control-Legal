@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ServicesComponent } from './services/services.component';
-import { ServiceComponent } from './service/service.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LegalServicesComponent } from './legal-services/legal-services.component';
+import { LegalServiceComponent } from './legal-service/legal-service.component';
 
 const routes: Routes = [
-  { path: '', component: ServicesComponent },
-  { path: ':slug', component: ServiceComponent },
+  { path: '', component: LegalServicesComponent },
+  { path: ':slug', component: LegalServiceComponent },
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    ServicesComponent,
-    ServiceComponent,
+    LegalServiceComponent,
     RouterModule.forChild(routes),
   ],
 })
