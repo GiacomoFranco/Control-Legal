@@ -15,17 +15,18 @@
       width: 100vw;
       position: absolute;
       background: radial-gradient(ellipse 20% 19% at 143% -4%,
-          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 50%) 0%,
           rgb(2, 28, 30) 586%)
     }
 
     .content {
       flex-direction: column;
       gap: 3rem;
+      container-type: inline-size;
 
       .main-element {
         display: flex;
-        flex-basis: 70rem;
+        flex-basis: clamp(50rem, 50cqi ,70rem);
         align-items: center;
 
         .main-content {
@@ -41,14 +42,14 @@
             border-left: .1rem solid var(--light-green);
             opacity: .48;
             padding-left: 1.6rem;
-            margin-bottom: .5rem;
+            margin-bottom: 1rem;
           }
 
           h1 {
             display: flex;
             flex-direction: column;
-            font-size: clamp(4.4rem, 4.9cqi, 7.6rem);
-            margin-bottom: 1rem;
+            font-size: clamp(4.6rem, 4.9cqi, 7.6rem);
+            margin-bottom: 1.5rem;
             max-width: 93rem;
           }
 
@@ -59,6 +60,13 @@
 
           app-redirection {
             margin-top: 4rem;
+          }
+
+          @include custom-breakpoint (500) {
+            h1 {
+              display: initial;
+              @include custom-heading(var(--fs-500), var(--fs-500));
+            }
           }
         }
       }
@@ -104,7 +112,15 @@
             }
           }
         }
+
+        @include custom-breakpoint(540) {
+          display: none;
+        }
       }
+    }
+
+    @include custom-breakpoint(540) {
+      min-height: min(65rem, 100vh);
     }
   }
 }
