@@ -15,7 +15,7 @@ export const routes: Routes = [
       import('./website/modules/legal-services/services.module').then(
         (m) => m.ServicesModule,
       ),
-    data: { breadcrumb: 'Servicios', url: '../../' },
+    data: { breadcrumb: 'Servicios' },
   },
   {
     title: 'Sobre Nosotros',

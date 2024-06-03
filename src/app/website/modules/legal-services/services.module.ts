@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: ':slug',
     component: LegalServiceComponent,
-    data: { breadcrumb: 'Servicio', url: '../../' },
+    data: { breadcrumb: 'Servicio' },
   },
 ];
 
