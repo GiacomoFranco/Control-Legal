@@ -1,0 +1,43 @@
+@import 'mixins';
+
+:host {
+  .legal-services {
+    padding: 11.5rem 0 7.8rem 0;
+
+    .section-container {
+      .content {
+        flex-direction: column;
+
+        .title-element {
+          max-width: 95rem;
+        }
+
+        .legal-services-element {
+          display: flex;
+          flex-direction: column;
+          margin-top: 5rem;
+          gap: 2.5rem;
+
+          &>div {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+          }
+
+          .bottom-row {
+
+            app-legal-services-card {
+              min-width: 40rem;
+              aspect-ratio: 589.05 / 196;
+
+              @include custom-breakpoint(995) {
+                aspect-ratio: 589.05 / 300;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
