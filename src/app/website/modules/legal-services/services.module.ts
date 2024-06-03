@@ -5,8 +5,15 @@ import { LegalServicesComponent } from './legal-services/legal-services.componen
 import { LegalServiceComponent } from './legal-service/legal-service.component';
 
 const routes: Routes = [
-  { path: '', component: LegalServicesComponent },
-  { path: ':slug', component: LegalServiceComponent },
+  {
+    path: '',
+    component: LegalServicesComponent,
+  },
+  {
+    path: ':slug',
+    component: LegalServiceComponent,
+    data: { breadcrumb: 'Servicio', url: '../../' },
+  },
 ];
 
 @NgModule({

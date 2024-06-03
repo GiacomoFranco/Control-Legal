@@ -7,14 +7,14 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     @if (serviceName) {
-      <a routerLink="">
+      <a [routerLink]="['/servicios', serviceSlug]">
         <div class="service-name">
           <p>{{ serviceName }}</p>
         </div>
         <img class="background-image" [src]="imageUrl" alt="" />
       </a>
     } @else {
-      <a routerLink="">
+      <a routerLink="/servicios">
         <div class="redirection-name">
           <img src="/assets/icons/redirection-arrow-green.svg" alt="" />
           <p>Estos son los servicios jurídicos que ofrecemos para ti</p>
@@ -32,4 +32,5 @@ import { RouterLink } from '@angular/router';
 export class LegalServicesCardComponent {
   @Input() imageUrl: string;
   @Input() serviceName: string;
+  @Input() serviceSlug: string;
 }

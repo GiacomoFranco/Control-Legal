@@ -13,15 +13,16 @@ export const routes: Routes = [
     path: 'servicios',
     loadChildren: () =>
       import('./website/modules/legal-services/services.module').then(
-        (m) => m.ServicesModule
+        (m) => m.ServicesModule,
       ),
+    data: { breadcrumb: 'Servicios', url: '../../' },
   },
   {
     title: 'Sobre Nosotros',
     path: 'sobre-nosotros',
     loadChildren: () =>
       import('./website/modules/about-us/about-us.module').then(
-        (m) => m.AboutUsModule
+        (m) => m.AboutUsModule,
       ),
     data: { breadcrumb: 'Nosotros' },
   },
@@ -42,7 +43,7 @@ export const routes: Routes = [
     path: 'contacto',
     loadChildren: () =>
       import('./website/modules/contact/contact.module').then(
-        (m) => m.ContactModule
+        (m) => m.ContactModule,
       ),
   },
   {
