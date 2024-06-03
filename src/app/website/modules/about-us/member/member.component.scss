@@ -90,8 +90,7 @@
           color: var(--light-green);
 
           @include for-small-tablet-portrait {
-            font-size: calc(var(--fs-700) - 2rem);
-            line-height: calc(var(--fs-700) - 2rem);
+            @include custom-heading (calc(var(--fs-700) - 1rem), calc(var(--fs-700) - 1rem));
           }
 
           @include for-phone-only {

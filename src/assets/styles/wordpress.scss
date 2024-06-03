@@ -32,7 +32,7 @@
   }
 
   @supports not (margin-bottom: 1lh) {
-    p, ul {
+    p, ul, div {
       margin-bottom: 1.9rem;
     }
   }
