@@ -2,7 +2,6 @@ import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Member } from '@app/website/interfaces/member.interface';
-import { BreadcrumbService } from '@app/website/services/breadcrumb.service';
 import { TeamMemberService } from '@app/website/services/team-member.service';
 import { AskAQuestionComponent } from '@app/website/shared/ask-a-question/ask-a-question.component';
 import { BreadcrumbComponent } from '@app/website/shared/breadcrumb/breadcrumb.component';
