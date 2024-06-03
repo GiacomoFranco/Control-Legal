@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { AskAQuestionComponent } from '@app/website/shared/ask-a-question/ask-a-question.component';
+import { LegalServicesSectionComponent } from '@app/website/shared/legal-services-section/legal-services-section.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [],
+  imports: [AskAQuestionComponent, LegalServicesSectionComponent],
   templateUrl: './legal-services.component.html',
   styleUrl: './legal-services.component.scss',
 })
