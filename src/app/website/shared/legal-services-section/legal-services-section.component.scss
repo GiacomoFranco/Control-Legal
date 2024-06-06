@@ -10,12 +10,12 @@
 
         .title-element {
           max-width: 95rem;
+          margin-bottom: 5rem;
         }
 
         .legal-services-element {
           display: flex;
           flex-direction: column;
-          margin-top: 5rem;
           gap: 2.5rem;
 
           &>div {
