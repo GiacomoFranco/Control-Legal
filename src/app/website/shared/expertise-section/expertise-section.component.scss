@@ -1,0 +1,99 @@
+@import 'mixins';
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .expertise-section {
+    display: flex;
+    width: 100vw;
+    height: 60rem;
+    background-color: var(--dark-green-secondary);
+
+    >div {
+      flex: 1;
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      padding: 5rem 0;
+
+      .content-element {
+        --operation-1: calc(var(--max-width) * 44.72);
+        --percentage: var(--operation-1) / 100;
+
+        margin-left: var(--section-x-margin);
+        display: flex;
+        flex-direction: column;
+        padding: 0 4cqw 0 0;
+        gap: 2rem;
+        max-width: calc(var(--percentage) + var(--section-x-margin));
+
+        .info-element {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        app-indicators {
+          flex-basis: initial;
+          justify-content: flex-start;
+
+          @include custom-breakpoint(450) {
+            flex-wrap: wrap;
+            text-align: start;
+          }
+        }
+      }
+
+    }
+
+
+    .image-container {
+      height: 100%;
+      position: relative;
+      background-image: url('src/assets/images/lawyer-signing.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom 20%;
+
+      &::after {
+        content: '';
+        background-color: var(--main-black);
+        opacity: .69;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @include custom-breakpoint(1000) {
+      flex-direction: column;
+      height: initial;
+
+      .content-container {
+        justify-content: center;
+        max-width: var(--max-width);
+        margin: var(--section-margin);
+
+        .content-element {
+          margin: initial;
+          padding: initial;
+          max-width: initial;
+        }
+      }
+
+      .image-container {
+        width: 100%;
+        flex-basis: 50rem;
+        background-position: left 20% top;
+      }
+    }
+  }
+}
