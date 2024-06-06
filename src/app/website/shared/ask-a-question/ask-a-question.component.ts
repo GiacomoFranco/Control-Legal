@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormComponent } from '../form/form.component';
 import {
   FormGroup,
@@ -16,12 +16,23 @@ import { SubmitButtonComponent } from '../form/submit-button/submit-button.compo
 @Component({
   selector: 'app-ask-a-question',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormComponent, TextInputComponent, FieldErrorComponent, CheckboxInputComponent, TextareaInputComponent, SubmitButtonComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormComponent,
+    TextInputComponent,
+    FieldErrorComponent,
+    CheckboxInputComponent,
+    TextareaInputComponent,
+    SubmitButtonComponent,
+  ],
   templateUrl: './ask-a-question.component.html',
   styleUrl: './ask-a-question.component.scss',
 })
 export class AskAQuestionComponent {
   constructor() {}
+
+  @Input() backgroundColor: string;
 
   public form: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
