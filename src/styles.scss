@@ -10,7 +10,8 @@
 
 :root {
   --max-width: 1700px;
-  --section-margin: 0 clamp(7rem, 7.7vw, 9.6rem);
+  --section-x-margin: clamp(7rem, 7.7vw, 9.6rem);
+  --section-margin: 0 var(--section-x-margin);
 
   --main-black: #021C1E;
   --dark-green: #004445;
@@ -39,11 +40,11 @@
   --fs-100: 1.4rem;
 
   @include custom-breakpoint(1150) {
-    --section-margin: 0 3.8rem;
+  --section-x-margin: 3.8rem;
   }
 
   @include custom-breakpoint(370) {
-    --section-margin: 0 1.8rem;
+    --section-x-margin: 1.8rem;
   }
 }
 
