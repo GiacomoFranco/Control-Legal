@@ -7,7 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: BlogComponent },
   { path: 'post', redirectTo: '' },
-  { path: 'post/:slug', component: BlogPostComponent },
+  {
+    path: 'post/:slug',
+    component: BlogPostComponent,
+    data: { breadcrumb: 'Post', url: '../../' },
+  },
 ];
 
 @NgModule({

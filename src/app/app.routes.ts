@@ -31,6 +31,7 @@ export const routes: Routes = [
     path: 'blog',
     loadChildren: () =>
       import('./website/modules/blog/blog.module').then((m) => m.BlogModule),
+    data: { breadcrumb: 'Blog' },
   },
   {
     title: 'FAQ',
