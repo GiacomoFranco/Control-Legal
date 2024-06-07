@@ -8,4 +8,5 @@ export interface Post {
   category: string;
   author: string;
   thumbnail: Image;
+  content?: string;
 }
