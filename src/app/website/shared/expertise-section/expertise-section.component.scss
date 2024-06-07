@@ -8,7 +8,7 @@
   .expertise-section {
     display: flex;
     width: 100vw;
-    height: 60rem;
+    height: 55rem;
     background-color: var(--dark-green-secondary);
 
     >div {
@@ -59,7 +59,7 @@
       background-image: url('src/assets/images/lawyer-signing.webp');
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center bottom 20%;
+      background-position: center top 20%;
 
       &::after {
         content: '';
