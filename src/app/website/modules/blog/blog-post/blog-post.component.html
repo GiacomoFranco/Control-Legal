@@ -1,9 +1,21 @@
 <main>
-  <section class="banner">
+  @if (post$ | async ; as post ) {
+  <app-breadcrumb [slug]="post.title" />
+  } @else {
+  <app-breadcrumb />
+  }
+  <section class="single-blog">
     <article class="section-container">
       <div class="content">
-        <h1>Blog Post</h1>
+        @if (post$ | async ; as post ) {
+        <h1>{{ post.title }}</h1>
+        <div [innerHTML]="post.content">
+
+        </div>
+        }
       </div>
     </article>
   </section>
+  <app-blog-posts-section />
+  <app-ask-a-question />
 </main>
