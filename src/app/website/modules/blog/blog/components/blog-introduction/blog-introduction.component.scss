@@ -1,0 +1,23 @@
+@import 'mixins';
+
+:host {
+  .blog-introduction {
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+
+      h2 {
+        flex-basis: 75.5rem;
+      }
+
+      p {
+        flex-basis: 83.2rem;
+      }
+
+      @include for-tablet-portrait {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
