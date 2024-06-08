@@ -8,7 +8,17 @@
     <article class="section-container">
       <div class="content">
         @if (post$ | async ; as post ) {
-        <h1>{{ post.title }}</h1>
+        <div class="post-header-element">
+          <div class="post-info-element">
+            <app-category-tag [category]="post.category" [secondary]="true" />
+            <p>{{ post.date }}</p>
+          </div>
+          <p> {{ post.author }}</p>
+        </div>
+        <div class="banner-element">
+          <img [src]="post.thumbnail.url" [alt]="post.thumbnail.alt">
+          <h1>{{ post.title }}</h1>
+        </div>
         <div [innerHTML]="post.content">
 
         </div>
