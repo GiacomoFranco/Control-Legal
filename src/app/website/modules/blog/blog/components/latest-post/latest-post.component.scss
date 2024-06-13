@@ -1,0 +1,68 @@
+@import 'mixins';
+
+:host {
+  .latest-post {
+    padding: 0 0 5rem 0;
+
+    .latest-post-element {
+      display: flex;
+      flex-grow: 1;
+      aspect-ratio: 170 / 72;
+      gap: 3rem;
+
+      .featured-post {
+        flex-basis: 65%;
+
+        app-blog-post-card {
+          height: 100%;
+        }
+      }
+
+      .secondary-latest-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        flex-basis: 35%;
+
+        app-blog-post-card {
+          height: initial;
+          width: 100%;
+        }
+      }
+
+      @include custom-breakpoint(1530) {
+        aspect-ratio: initial;
+        height: 63rem;
+      }
+
+      @include custom-breakpoint(1270) {
+        flex-direction: column;
+        height: 100rem;
+
+        .featured-post {
+          flex-basis: 50%;
+        }
+
+        .secondary-latest-posts {
+          flex-direction: row;
+        }
+      }
+
+      @include custom-breakpoint(800) {
+        height: initial;
+
+
+
+        .secondary-latest-posts,
+        .featured-post {
+          flex-direction: column;
+
+          app-blog-post-card {
+            height: 53.4rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
