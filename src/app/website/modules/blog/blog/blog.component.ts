@@ -3,12 +3,14 @@ import { AskAQuestionComponent } from '@app/website/shared/ask-a-question/ask-a-
 import { BlogPostsSectionComponent } from '@app/website/shared/blog-posts-section/blog-posts-section.component';
 import { DefaultTitleComponent } from '@app/website/shared/default-title/default-title.component';
 import { BlogIntroductionComponent } from './components/blog-introduction/blog-introduction.component';
+import { LatestPostComponent } from './components/latest-post/latest-post.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
   imports: [
     BlogIntroductionComponent,
+    LatestPostComponent,
     DefaultTitleComponent,
     BlogPostsSectionComponent,
     AskAQuestionComponent,
