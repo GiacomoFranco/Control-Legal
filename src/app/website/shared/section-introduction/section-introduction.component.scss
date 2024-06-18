@@ -1,9 +1,9 @@
 @import 'mixins';
 
 :host {
-  .section-introduction {
-    padding-bottom: 7rem;
+  display: block;
 
+  .section-introduction {
     .content {
       display: flex;
       justify-content: space-between;
