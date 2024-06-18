@@ -1,0 +1,52 @@
+:host {
+  width: 100%;
+  display: flex;
+
+  article {
+    flex-grow: 1;
+
+    .mission-vision-container {
+      display: flex;
+
+      .mission-vision-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 5rem;
+        padding: 20rem 0;
+        max-width: calc(var(--percentage) + var(--section-x-margin));
+
+        p {
+          line-height: 2.6rem;
+        }
+      }
+    }
+  }
+
+  .mission-vision-card {
+    background-color: #0E3D3D;
+
+    h2,
+    p {
+      color: var(--light-green);
+    }
+
+    p {
+      opacity: .38;
+    }
+  }
+
+  .lightCard {
+    background-color: var(--light-green);
+
+    h2,
+    p {
+      color: #0E3D3D;
+    }
+
+    p {
+      opacity: .75;
+    }
+  }
+}
