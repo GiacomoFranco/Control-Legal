@@ -1,6 +1,8 @@
 :host {
-  ::ng-deep {
-    app-section-introduction {
+  app-section-introduction {
+    padding-bottom: 12.7rem;
+
+    ::ng-deep {
       h2 {
         flex-basis: 64.5rem !important;
       }

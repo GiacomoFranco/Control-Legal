@@ -4,14 +4,20 @@ import { DefaultTitleComponent } from '@app/website/shared/default-title/default
 import { ExpertiseSectionComponent } from '@app/website/shared/expertise-section/expertise-section.component';
 import { SectionIntroductionComponent } from '@app/website/shared/section-introduction/section-introduction.component';
 import { TeamMembersSectionComponent } from '@app/website/shared/team-members-section/team-members-section.component';
+import { MissionVisionSectionComponent } from './components/mission-vision-section/mission-vision-section.component';
 
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [ DefaultTitleComponent , SectionIntroductionComponent,TeamMembersSectionComponent, ExpertiseSectionComponent, AskAQuestionComponent],
+  imports: [
+    DefaultTitleComponent,
+    SectionIntroductionComponent,
+    MissionVisionSectionComponent,
+    TeamMembersSectionComponent,
+    ExpertiseSectionComponent,
+    AskAQuestionComponent,
+  ],
   templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.scss'
+  styleUrl: './about-us.component.scss',
 })
-export class AboutUsComponent {
-
-}
+export class AboutUsComponent {}
