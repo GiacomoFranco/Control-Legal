@@ -1,0 +1,59 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  justify-content: center;
+  --operation-1: calc(var(--max-width) * 44.72);
+  --percentage: var(--operation-1) / 100;
+
+  app-mission-vision-card {
+    &:nth-child(odd) {
+      ::ng-deep {
+        .mission-vision-card {
+          .mission-vision-container {
+            justify-content: flex-end;
+
+            .mission-vision-content {
+              margin: 0 var(--section-x-margin) 0 5cqw;
+            }
+
+            @include custom-breakpoint(1050) {
+              justify-content: center;
+
+              .mission-vision-content {
+                margin: 0 var(--section-x-margin);
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      ::ng-deep {
+        .mission-vision-card {
+          .mission-vision-container {
+            justify-content: flex-start;
+
+            .mission-vision-content {
+              margin: 0 5cqw 0 var(--section-x-margin);
+            }
+
+            @include custom-breakpoint(1050) {
+              justify-content: center;
+
+              .mission-vision-content {
+                margin: 0 var(--section-x-margin);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include custom-breakpoint(1050) {
+    flex-direction: column;
+  }
+}
