@@ -5,6 +5,7 @@ import { AskAQuestionComponent } from '@app/website/shared/ask-a-question/ask-a-
 import { BlogPostsSectionComponent } from '@app/website/shared/blog-posts-section/blog-posts-section.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { LegalServicesSectionComponent } from '@app/website/shared/legal-services-section/legal-services-section.component';
+import { BannerSectionComponent } from '@app/website/shared/banner-section/banner-section.component';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { LegalServicesSectionComponent } from '@app/website/shared/legal-service
     TeamMembersSectionComponent,
     MetricsComponent,
     AskAQuestionComponent,
+    BannerSectionComponent,
     BlogPostsSectionComponent,
   ],
   templateUrl: './home.component.html',
