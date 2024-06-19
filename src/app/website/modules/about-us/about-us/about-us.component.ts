@@ -5,6 +5,7 @@ import { ExpertiseSectionComponent } from '@app/website/shared/expertise-section
 import { SectionIntroductionComponent } from '@app/website/shared/section-introduction/section-introduction.component';
 import { TeamMembersSectionComponent } from '@app/website/shared/team-members-section/team-members-section.component';
 import { MissionVisionSectionComponent } from './components/mission-vision-section/mission-vision-section.component';
+import { BannerSectionComponent } from '@app/website/shared/banner-section/banner-section.component';
 
 @Component({
   selector: 'app-about-us',
@@ -13,6 +14,7 @@ import { MissionVisionSectionComponent } from './components/mission-vision-secti
     DefaultTitleComponent,
     SectionIntroductionComponent,
     MissionVisionSectionComponent,
+    BannerSectionComponent,
     TeamMembersSectionComponent,
     ExpertiseSectionComponent,
     AskAQuestionComponent,
