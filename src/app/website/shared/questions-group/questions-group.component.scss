@@ -1,4 +1,6 @@
 :host {
+  display: block;
+
   h2 {
     color: var(--mint-green);
     font-size: calc(var(--fs-500) - .3rem);
@@ -6,6 +8,6 @@
     text-decoration: underline var(--mint-green);
     text-decoration-thickness: .15rem;
     text-underline-offset: 1.2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 }
