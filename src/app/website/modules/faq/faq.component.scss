@@ -1,0 +1,54 @@
+@import 'mixins';
+
+:host {
+  scroll-margin-top: 12rem;
+
+  .faq-section {
+    .content {
+      position: relative;
+      justify-content: space-between;
+      gap: 5rem;
+      padding-bottom: 12rem;
+
+      .faq-navigation-element {
+        flex-shrink: 0;
+        padding-bottom: 3rem;
+
+        .navigation {
+          top: 13rem;
+          position: sticky;
+
+          h2 {
+            @include custom-heading(var(--fs-400), var(--fs-400));
+            text-decoration: underline var(--mint-green);
+            text-decoration-thickness: .15rem;
+            text-underline-offset: 1.2rem;
+            margin-bottom: 4rem;
+          }
+
+          .navigation-hint {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            a {
+              opacity: .3;
+            }
+          }
+        }
+
+      }
+
+      .questions-group-element {
+        flex-basis: 78%;
+
+        ::ng-deep {
+
+          app-questions-group:not(:last-child) {
+            margin-bottom: 6.5rem;
+          }
+        }
+      }
+    }
+  }
+}

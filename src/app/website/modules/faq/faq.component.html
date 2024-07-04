@@ -1,3 +1,42 @@
 <main>
-  <app-default-title title="Tienes preguntas? este es nuestro FAQ"/>
+  <app-default-title title="Tienes preguntas? este es nuestro FAQ" />
+  <section class="faq-section">
+    <div class="section-container">
+      <div class="content">
+        <div class="faq-navigation-element">
+          <div class="navigation">
+            <h2>Tabla de contenidos</h2>
+            <div class="navigation-hint">
+              <a routerLink="./" fragment="preguntas">Servicios</a>
+              <a routerLink="./" fragment="facturación">Facturación</a>
+              <a routerLink="./" fragment="preguntas">Flujo de trabajo</a>
+              <a routerLink="./" fragment="atencion">Atención</a>
+            </div>
+          </div>
+        </div>
+        <div class="questions-group-element">
+          <app-questions-group>
+            <app-question />
+            <app-question />
+            <app-question />
+          </app-questions-group>
+          <app-questions-group>
+            <app-question />
+            <app-question />
+            <app-question />
+          </app-questions-group>
+          <app-questions-group>
+            <app-question />
+            <app-question />
+            <app-question />
+          </app-questions-group>
+          <app-questions-group>
+            <app-question />
+            <app-question />
+            <app-question />
+          </app-questions-group>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
