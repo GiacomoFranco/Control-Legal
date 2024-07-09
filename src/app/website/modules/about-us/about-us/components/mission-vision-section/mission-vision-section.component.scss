@@ -3,7 +3,7 @@
 :host {
   display: flex;
   justify-content: center;
-  --operation-1: calc(var(--max-width) * 44.72);
+  --operation-1: calc(var(--max-width) * 38.72);
   --percentage: var(--operation-1) / 100;
 
   app-mission-vision-card {
