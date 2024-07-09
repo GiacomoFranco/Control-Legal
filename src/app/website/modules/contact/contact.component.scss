@@ -1,0 +1,86 @@
+@import 'mixins';
+
+:host {
+  --operation-1: calc(var(--max-width) * 38.72);
+  --percentage: var(--operation-1) / 100;
+
+  .contact {
+    align-items: initial;
+
+    >div {
+      width: 100%;
+      display: flex;
+    }
+
+    .info-element {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 9.5rem 0 9.5rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('src/assets/images/law-symbol.webp');
+
+      .info-element-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .info-element-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          gap: 2rem;
+          max-width: calc(var(--percentage) + var(--section-x-margin));
+          margin: 0 var(--section-x-margin) 0 3.7cqw;
+          width: 100%;
+
+          .info-group {
+            text-decoration: underline;
+
+            // text-underline-offset: .5rem;
+
+            h3 {
+              font-size: var(--fs-300);
+              font-weight: 500;
+              font-style: italic;
+              text-decoration: none !important;
+            }
+
+            a {
+              font-size: var(--fs-300);
+            }
+          }
+        }
+      }
+    }
+
+    .form-element {
+      flex-direction: column;
+      padding: 17.5rem 0 9.5rem;
+
+      .form-element-container {
+        justify-content: flex-end;
+
+        .form-element-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          gap: 5rem;
+          max-width: calc(var(--percentage) + var(--section-x-margin));
+          margin: 0 var(--section-x-margin) 0 3.7cqw;
+
+          h1 {
+            color: var(--mint-green);
+            margin-bottom: 5rem;
+            max-width: 80rem;
+          }
+
+          app-form {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}

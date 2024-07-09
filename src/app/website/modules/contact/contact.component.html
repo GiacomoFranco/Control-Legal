@@ -1,9 +1,70 @@
 <main>
-  <section class="banner">
-    <article class="section-container">
-      <div class="content">
-        <h1>Contact</h1>
+  <section class="contact">
+    <div class="info-element">
+      <div class="info-element-container">
+        <div class="info-element-content">
+          <div class="info-group">
+            <h3>Conmutador</h3>
+              <a href="tel:(604) 3222695">(604) 3222695</a>
+          </div>
+          <div class="info-group">
+            <h3>Envíanos un email</h3>
+              <a href="mail:controllegalcl@gmail.com">controllegalcl&#64;gmail.com</a>
+          </div>
+          <div class="info-group">
+            <h3>Visítanos</h3>
+              <a href="https://maps.app.goo.gl/ABEPgXAZ56Am5vpRA">Carrera 43A # 15sur - 15 Ed. Xerox, Octavo piso.</a>
+          </div>
+        </div>
       </div>
-    </article>
+    </div>
+    <div class="form-element">
+      <div class="form-element-container">
+        <div class="form-element-content">
+          <h1>No dudes en contactarnos</h1>
+          <app-form [formGroup]="form">
+            <app-text-input fieldID="contact-name" label="Nombre Completo" type="text" [control]="name">
+              <app-field-error error [validation]="(name.touched && name.value === '')" alert="Este campo es requerido" />
+            </app-text-input>
+
+            <div class="form-row">
+              <app-text-input fieldID="contact-email" label="Email" type="text" [control]="email">
+                <app-field-error error [validation]="(email.touched && email.value === '')"
+                  alert="Este campo es requerido" />
+                <app-field-error error [validation]="(email.dirty && email.invalid && email.value !== '')"
+                  alert="Ingresa un correo electrónico válido" />
+              </app-text-input>
+
+              <app-text-input fieldID="contact-phone" label="Teléfono" type="phone" [control]="phone">
+                <app-field-error error [validation]="(phone.touched && phone.value === '')"
+                  alert="Este campo es requerido" />
+                <app-field-error error [validation]="(phone.dirty && phone.invalid && phone.value !== '')"
+                  alert="Ingresa un teléfono válido" />
+              </app-text-input>
+            </div>
+
+            <app-text-input fieldID="contact-subject" label="Asunto" type="text" [control]="subject">
+              <app-field-error error [validation]="(subject.touched && subject.value === '')"
+                alert="Este campo es requerido" />
+            </app-text-input>
+
+            <app-textarea-input label="Escribe tu mensaje acá" [control]="question">
+              <app-field-error error [validation]="(question.touched && question.value === '')"
+                alert="Este campo es requerido" />
+            </app-textarea-input>
+
+            <div class="form-row">
+              <app-checkbox-input [control]="terms">
+                <app-field-error error [validation]="terms.touched && terms.value !== true"
+                  alert="Debes aceptar nuestras politicas de privacidad para poder enviar un mensaje" />
+              </app-checkbox-input>
+
+              <app-submit-button text="Enviar mensaje" />
+            </div>
+
+          </app-form>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
