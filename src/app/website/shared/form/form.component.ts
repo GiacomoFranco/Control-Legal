@@ -15,31 +15,31 @@ import { ReCaptchaV3Service, RecaptchaV3Module } from 'ng-recaptcha';
     <form [formGroup]="form" (ngSubmit)="sendMail()">
       <ng-content></ng-content>
     </form>
-    @if(dialogState) {
-    <app-dialog [errorCode]="errorReponse" />
+    @if (dialogState) {
+      <app-dialog [errorCode]="errorReponse" />
     }
   `,
   styleUrl: './form.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
 export class FormComponent {
+  constructor(
+    private mailService: MailSenderService,
+    private dialogService: DialogService,
+    private recaptchaV3Service: ReCaptchaV3Service,
+  ) {
+    this.listenDialogState = this.dialogService.dialogOpen$.subscribe(
+      (state) => {
+        this.dialogState = state;
+      },
+    );
+  }
+
   @Input('formGroup') form: FormGroup = new FormGroup({});
 
   dialogState = false;
   listenDialogState: Subscription;
   errorReponse: string | number;
-
-  constructor(
-    private mailService: MailSenderService,
-    private dialogService: DialogService,
-    private recaptchaV3Service: ReCaptchaV3Service
-  ) {
-    this.listenDialogState = this.dialogService.dialogOpen$.subscribe(
-      (state) => {
-        this.dialogState = state;
-      }
-    );
-  }
 
   sendMail() {
     this.form.markAllAsTouched();
@@ -54,7 +54,7 @@ export class FormComponent {
             (err: HttpErrorResponse) => {
               this.errorReponse = err.status;
               this.dialogService.openDialog();
-            }
+            },
           );
         } else {
           this.errorReponse = 'ReCaptcha';
