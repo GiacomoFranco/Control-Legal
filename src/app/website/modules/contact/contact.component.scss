@@ -82,5 +82,32 @@
       }
 
     }
+
+    @include custom-breakpoint(1285) {
+      flex-direction: column-reverse;
+
+      .form-element {
+        .form-element-container {
+          .form-element-content {
+            display: flex;
+            flex-direction: column;
+            max-width: initial;
+            align-items: center;
+
+            h1 {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .info-element {
+        min-height: 530px;
+
+        .info-element-container {
+          justify-content: initial;
+        }
+      }
+    }
   }
 }
