@@ -32,8 +32,8 @@
             </app-text-input>
           </div>
 
-          <app-textarea-input label="Escribe tu pregunta acá" [control]="question">
-            <app-field-error error [validation]="(question.touched && question.value === '')"
+          <app-textarea-input label="Escribe tu pregunta acá" [control]="message">
+            <app-field-error error [validation]="(message.touched && message.value === '')"
               alert="Este campo es requerido" />
           </app-textarea-input>
 

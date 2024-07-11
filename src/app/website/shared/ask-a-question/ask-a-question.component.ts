@@ -43,7 +43,7 @@ export class AskAQuestionComponent {
       Validators.min(1234567890),
       Validators.max(12345678901),
     ]),
-    question: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
     terms: new FormControl(false, [Validators.requiredTrue]),
   });
 
@@ -59,8 +59,8 @@ export class AskAQuestionComponent {
     return this.form.get('phone') as FormControl;
   }
 
-  get question(): FormControl {
-    return this.form.get('question') as FormControl;
+  get message(): FormControl {
+    return this.form.get('message') as FormControl;
   }
   get terms(): FormControl {
     return this.form.get('terms') as FormControl;
