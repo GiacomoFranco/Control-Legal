@@ -32,7 +32,7 @@ export class ContactComponent {
       Validators.max(12345678901),
     ]),
     subject: new FormControl('', Validators.required),
-    question: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
     terms: new FormControl(false, [Validators.requiredTrue]),
   });
 
@@ -52,8 +52,8 @@ export class ContactComponent {
     return this.form.get('subject') as FormControl;
   }
 
-  get question(): FormControl {
-    return this.form.get('question') as FormControl;
+  get message(): FormControl {
+    return this.form.get('message') as FormControl;
   }
   get terms(): FormControl {
     return this.form.get('terms') as FormControl;
