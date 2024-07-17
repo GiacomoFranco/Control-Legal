@@ -5,14 +5,17 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <h2 [id]="idParser()">{{ groupTitle }}</h2>
+    @if(groupTitle){
+      <h2 [id]="idParser()">{{ groupTitle }}</h2>
+    }
 
     <ng-content> </ng-content>
+    <ng-content select="[redirection]"></ng-content>
   `,
   styleUrl: './questions-group.component.scss',
 })
 export class QuestionsGroupComponent {
-  @Input() groupTitle: string = 'Preguntas';
+  @Input() groupTitle: string;
 
   idParser(): string {
     return `${this.groupTitle.toLowerCase().replace(' ', '-')}`;
