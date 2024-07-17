@@ -1,0 +1,53 @@
+@import 'mixins';
+
+:host {
+  .section-faq {
+    padding: 13rem 0 10rem 0;
+
+    .section-container {
+      .content {
+        gap: 5rem;
+
+        h2 {
+          flex-basis: 55rem;
+        }
+
+        app-questions-group {
+          margin-top: 3rem;
+          flex-basis: 0;
+          flex-grow: 1;
+
+          app-redirection {
+            display: flex;
+            margin-top: 2rem;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+
+      @include custom-breakpoint(1490){
+        .content {
+          h2 {
+            flex-basis: 43rem;
+          }
+        }
+      }
+
+      @include custom-breakpoint(1300){
+        .content {
+          flex-direction: column;
+
+          h2 {
+            flex-basis: initial;
+            text-wrap: balance;
+
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
