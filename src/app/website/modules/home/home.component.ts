@@ -6,6 +6,7 @@ import { BlogPostsSectionComponent } from '@app/website/shared/blog-posts-sectio
 import { BannerComponent } from './components/banner/banner.component';
 import { LegalServicesSectionComponent } from '@app/website/shared/legal-services-section/legal-services-section.component';
 import { BannerSectionComponent } from '@app/website/shared/banner-section/banner-section.component';
+import { FaqSectionComponent } from "./components/faq-section/faq-section.component";
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,8 @@ import { BannerSectionComponent } from '@app/website/shared/banner-section/banne
     AskAQuestionComponent,
     BannerSectionComponent,
     BlogPostsSectionComponent,
-  ],
+    FaqSectionComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
