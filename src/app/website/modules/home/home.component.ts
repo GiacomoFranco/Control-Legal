@@ -7,6 +7,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { LegalServicesSectionComponent } from '@app/website/shared/legal-services-section/legal-services-section.component';
 import { BannerSectionComponent } from '@app/website/shared/banner-section/banner-section.component';
 import { FaqSectionComponent } from "./components/faq-section/faq-section.component";
+import { ConsiderationsComponent } from "./components/considerations/considerations.component";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { FaqSectionComponent } from "./components/faq-section/faq-section.compon
     AskAQuestionComponent,
     BannerSectionComponent,
     BlogPostsSectionComponent,
-    FaqSectionComponent
+    FaqSectionComponent,
+    ConsiderationsComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
