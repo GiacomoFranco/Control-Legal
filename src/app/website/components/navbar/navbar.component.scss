@@ -1,11 +1,14 @@
 @import 'mixins';
 
 :host {
-  position: relative;
+  transition: top .3s ease, background-color .5s ease;
+  z-index: 2;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 12.8rem;
+  width: 100vw;
   border-bottom: 1px solid var(--light-green-outline);
 
   header {
@@ -53,7 +56,7 @@
     }
 
     .navigation-menu {
-      gap: 1rem;
+      gap: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -63,7 +66,7 @@
       width: 100vw;
       background-image: url('/assets/images/navigation-menu-background.png');
       background-position: center;
-      background-size: cover;
+      background-size: auto;
       left: 0;
       top: 0;
 
@@ -102,9 +105,11 @@
 
         .navigation {
           display: flex;
+          flex-basis: 24rem;
 
           nav {
             width: 50%;
+            height: 340px;
 
             .links-element {
               display: flex;
@@ -172,6 +177,10 @@
           .navigation {
             flex-direction: column;
 
+            nav {
+              width: 100%;
+            }
+
             .contact-button {
               margin-top: 3rem;
               max-width: 49.4rem;
@@ -185,6 +194,8 @@
     @include for-tablet-landscape {
       .links-element {
         margin-left: initial;
+        width: initial;
+        height: 100%;
       }
     }
 

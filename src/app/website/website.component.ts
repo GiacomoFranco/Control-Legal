@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 import { NavbarComponent } from '@app/website/components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-website',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavbarComponent, FooterComponent],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    NavbarComponent,
+    FooterComponent,
+  ],
   template: `
-    <app-navbar />
+    <app-navbar
+      [style.top]="hideNav ? '-12.8rem' : '0'"
+      [style.background-color]="navbarBackground ? 'var(--main-black)' : 'transparent'"
+    />
     <router-outlet />
     <app-footer />
   `,
@@ -20,4 +35,38 @@ import { FooterComponent } from './components/footer/footer.component';
     }
   `,
 })
-export class WebsiteComponent {}
+export class WebsiteComponent {
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url;
+        this.navbarBackgroundOffset = this.currentRoute === '/' ? 125 : 0;
+      }
+    });
+  }
+
+  scrollTop = 0;
+  hideNav = false;
+  currentRoute: string;
+  navbarBackgroundOffset: number;
+  navbarBackground: boolean;
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    const scrollPosition =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    const isScrollingDown = scrollPosition > this.scrollTop;
+    this.hideNav = isScrollingDown;
+    this.scrollTop = scrollPosition;
+    console.log(this.scrollTop);
+
+    if (scrollPosition > this.navbarBackgroundOffset) {
+      this.navbarBackground = true;
+    } else {
+      this.navbarBackground = false;
+    }
+  }
+}
