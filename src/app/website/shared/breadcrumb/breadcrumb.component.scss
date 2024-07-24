@@ -1,78 +1,84 @@
 @import 'mixins';
 
 :host {
-  .section-container {
-    padding: 6rem 0 5rem 0;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
+  section {
+    margin-top: 12.8rem;
 
-    a {
-      position: relative;
+    .section-container {
+      padding: 6rem 0 5rem 0;
       display: flex;
-      flex-direction: column;
+      gap: 2rem;
       align-items: center;
-      transition: all .3s ease;
+      flex-wrap: wrap;
 
-      &:hover {
-        color: var(--light-green);
+      a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all .3s ease;
+
+        &:hover {
+          color: var(--light-green);
+
+          &::after {
+            content: '';
+            width: 100%;
+            transition: all .5s ease;
+          }
+        }
 
         &::after {
           content: '';
-          width: 100%;
-          transition: all .5s ease;
+          width: 0;
+          height: 12px;
+          position: absolute;
+          bottom: -.1rem;
+          left: 0;
+          border-bottom: .1rem solid var(--light-green);
+          transition: all .4s ease;
         }
       }
 
-      &::after {
-        content: '';
-        width: 0;
-        height: 12px;
-        position: absolute;
-        bottom: -.1rem;
-        left: 0;
-        border-bottom: .1rem solid var(--light-green);
-        transition: all .4s ease;
+      label {
+        color: white;
+        cursor: pointer;
+      }
+
+      img {
+        user-select: none;
       }
     }
 
-    label {
-      color: white;
-      cursor: pointer;
+    .skeleton {
+      display: flex;
+      flex-basis: 50rem;
+      gap: 2rem;
+
+      div {
+        border-radius: 99rem;
+        background-color: #205357;
+        opacity: .2;
+        height: 2rem;
+      }
+
+      div:nth-child(1) {
+        flex-basis: 30rem;
+      }
+
+      div:nth-child(2) {
+        flex-basis: 10rem;
+      }
+
+      div:nth-child(3) {
+        flex-basis: 15rem;
+      }
     }
 
-    img {
-      user-select: none;
-    }
-  }
-
-  .skeleton {
-    display: flex;
-    flex-basis: 50rem;
-    gap: 2rem;
-
-    div {
-      border-radius: 99rem;
-      background-color: #205357;
-      opacity: .2;
-      height: 2rem;
-    }
-
-    div:nth-child(1) {
-      flex-basis: 30rem;
-    }
-    div:nth-child(2) {
-      flex-basis: 10rem;
-    }
-    div:nth-child(3) {
-      flex-basis: 15rem;
-    }
-  }
-
-  @include for-phone-only {
-    .section-container {
-      padding: 4rem 0 3rem 0;
+    @include for-phone-only {
+      .section-container {
+        padding: 4rem 0 3rem 0;
+      }
     }
   }
 }
