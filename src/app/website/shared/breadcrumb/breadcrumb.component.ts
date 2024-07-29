@@ -50,7 +50,6 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //console.log(this.slug);
 
     this.breadcrumbs = [
       ...this.breadcrumbService.breadcrumbs,

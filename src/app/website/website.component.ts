@@ -61,7 +61,6 @@ export class WebsiteComponent {
     const isScrollingDown = scrollPosition > this.scrollTop;
     this.hideNav = isScrollingDown;
     this.scrollTop = scrollPosition;
-    console.log(this.scrollTop);
 
     if (scrollPosition > this.navbarBackgroundOffset) {
       this.navbarBackground = true;

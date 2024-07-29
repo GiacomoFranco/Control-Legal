@@ -30,7 +30,6 @@ export class BlogPostComponent {
         this.blogPostService.fetchPost(this.slugPost);
       }
       this.post$ = this.blogPostService.getPost();
-      console.log(this.post$);
     });
   }
 }
