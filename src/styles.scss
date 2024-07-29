@@ -122,6 +122,10 @@ input:-webkit-autofill:focus {
   color: var(--light-green);
 }
 
+.grecaptcha-badge {
+  display: none !important;
+}
+
 /* Fonts
 --------------------------------------------- */
 
