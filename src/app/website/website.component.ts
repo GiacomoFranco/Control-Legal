@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 import { NavbarComponent } from '@app/website/components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { WhatsappRedirectionComponent } from './components/whatsapp-redirection/whatsapp-redirection.component';
 
 @Component({
   selector: 'app-website',
@@ -18,12 +19,14 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterLinkActive,
     NavbarComponent,
     FooterComponent,
+    WhatsappRedirectionComponent
   ],
   template: `
     <app-navbar
       [style.top]="hideNav ? '-12.8rem' : '0'"
       [style.background-color]="navbarBackground ? 'var(--main-black)' : 'transparent'"
     />
+    <app-whatsapp-redirection />
     <router-outlet />
     <app-footer />
   `,
