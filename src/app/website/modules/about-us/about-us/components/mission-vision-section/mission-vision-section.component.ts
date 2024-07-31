@@ -8,11 +8,11 @@ import { MissionVisionCardComponent } from '../mission-vision-card/mission-visio
   template: `
     <app-mission-vision-card
       title="Nuestra Misión"
-      text="Nuestro personal está altamente capacitado para garantizar la más alta calidad en la prestación del servicio y por esto, continuamos en formación constante para ser cada vez mejores. Nuestro personal está altamente capacitado para garantizar la más alta calidad en la prestación del servicio y por esto, continuamos en formación constante para ser cada vez mejores."
+      text="En Control Legal, nuestra misión es proporcionar asesoría jurídica empresarial de excelencia, enfocada en el desarrollo y gestión de políticas de seguridad jurídica empresarial, que protejan y fortalezcan los negocios en un entorno dinámico y desafiante. Nos dedicamos a ofrecer soluciones legales personalizadas y efectivas, que no solo prevengan riesgos y conflictos, sino que también promuevan la integridad y el crecimiento sostenible de nuestros clientes."
     />
     <app-mission-vision-card
       title="Nuestra Visión"
-      text="Sebastián Pérez Monsalve es reconocido como un destacado abogado especialista en derecho procesal penal, cuyo compromiso con la excelencia y la justicia ha dejado una huella indeleble en el ámbito legal. Con una sólida formación académica y una vasta experiencia en el campo, Pérez Monsalve se ha destacado como líder en el área de derecho penal y derecho público."
+      text="Nuestra visión es ser la marca de asesoría jurídica empresarial líder en la creación de políticas de seguridad jurídica, reconocida por nuestra capacidad para anticipar, entender y resolver los desafíos legales que enfrentan las empresas modernas. Aspiramos a establecer un estándar de excelencia en el asesoramiento jurídico, siendo el socio preferido para empresas que buscan no solo protección legal, sino también un asesoramiento estratégico que impulse su éxito a largo plazo. En Control Legal, nos esforzamos por innovar continuamente y adaptar nuestras soluciones para satisfacer las necesidades cambiantes de un entorno empresarial global."
       [lightCard]="true"
     />
   `,
