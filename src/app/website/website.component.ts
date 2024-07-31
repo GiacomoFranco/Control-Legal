@@ -19,12 +19,15 @@ import { WhatsappRedirectionComponent } from './components/whatsapp-redirection/
     RouterLinkActive,
     NavbarComponent,
     FooterComponent,
-    WhatsappRedirectionComponent
+    WhatsappRedirectionComponent,
   ],
   template: `
     <app-navbar
       [style.top]="hideNav ? '-12.8rem' : '0'"
-      [style.background-color]="navbarBackground ? 'var(--main-black)' : 'transparent'"
+      [style.background-color]="
+        navbarBackground ? 'var(--main-black)' : 'transparent'
+      "
+      (openedMenu)="toggleMenu()"
     />
     <app-whatsapp-redirection />
     <router-outlet />
@@ -53,22 +56,29 @@ export class WebsiteComponent {
   currentRoute: string;
   navbarBackgroundOffset: number;
   navbarBackground: boolean;
+  openedNav: boolean = false;
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    const scrollPosition =
-      window.scrollY ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
-    const isScrollingDown = scrollPosition > this.scrollTop;
-    this.hideNav = isScrollingDown;
-    this.scrollTop = scrollPosition;
+    if (!this.openedNav) {
+      const scrollPosition =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+      const isScrollingDown = scrollPosition > this.scrollTop;
+      this.hideNav = isScrollingDown;
+      this.scrollTop = scrollPosition;
 
-    if (scrollPosition > this.navbarBackgroundOffset) {
-      this.navbarBackground = true;
-    } else {
-      this.navbarBackground = false;
+      if (scrollPosition > this.navbarBackgroundOffset) {
+        this.navbarBackground = true;
+      } else {
+        this.navbarBackground = false;
+      }
     }
   }
+
+  toggleMenu(){
+    this.openedNav = !this.openedNav
+  };
 }

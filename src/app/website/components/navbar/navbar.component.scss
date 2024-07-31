@@ -275,4 +275,14 @@
       }
     }
   }
+
+  .active-link {
+    color: var(--light-green);
+
+    &.movil{
+      text-decoration: underline;
+      text-underline-offset: .3rem;
+      text-decoration-thickness: .3rem;
+    }
+  }
 }
