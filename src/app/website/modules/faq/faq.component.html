@@ -7,34 +7,20 @@
           <div class="navigation">
             <h2>Tabla de contenidos</h2>
             <div class="navigation-hint">
-              <a routerLink="./" fragment="preguntas">Servicios</a>
-              <a routerLink="./" fragment="facturación">Facturación</a>
-              <a routerLink="./" fragment="preguntas">Flujo de trabajo</a>
-              <a routerLink="./" fragment="atencion">Atención</a>
+              @for (group of questionsGroups; track $index) {
+                <a routerLink="./" [fragment]="group.fragment">{{ group.title }}</a>
+              }
             </div>
           </div>
         </div>
         <div class="questions-group-element">
-          <app-questions-group groupTitle="Title">
-            <app-question />
-            <app-question />
-            <app-question />
-          </app-questions-group>
-          <app-questions-group groupTitle="Title">
-            <app-question />
-            <app-question />
-            <app-question />
-          </app-questions-group>
-          <app-questions-group groupTitle="Title">
-            <app-question />
-            <app-question />
-            <app-question />
-          </app-questions-group>
-          <app-questions-group groupTitle="Title">
-            <app-question />
-            <app-question />
-            <app-question />
-          </app-questions-group>
+          @for (group of questionsGroups; track $index) {
+            <app-questions-group [groupTitle]="group.title" [id]="group.fragment">
+              @for (question of group.questionsGroup; track $index) {
+                <app-question [question]="question.question" [answer]="question.answer"/>
+              }
+            </app-questions-group>
+          }
         </div>
       </div>
     </div>

@@ -5,8 +5,8 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    @if(groupTitle){
-      <h2 [id]="idParser()">{{ groupTitle }}</h2>
+    @if (groupTitle) {
+      <h2 [id]="id">{{ groupTitle }}</h2>
     }
 
     <ng-content> </ng-content>
@@ -16,6 +16,7 @@ import { Component, Input } from '@angular/core';
 })
 export class QuestionsGroupComponent {
   @Input() groupTitle: string;
+  @Input() id: string;
 
   idParser(): string {
     return `${this.groupTitle.toLowerCase().replace(' ', '-')}`;
