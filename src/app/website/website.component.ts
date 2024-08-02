@@ -22,6 +22,7 @@ import { WhatsappRedirectionComponent } from './components/whatsapp-redirection/
     WhatsappRedirectionComponent,
   ],
   template: `
+  <div [style.max-height]="openedNav ? '100vh' : 'calc(100vh - 12.8rem)'">
     <app-navbar
       [style.top]="hideNav ? '-12.8rem' : '0'"
       [style.background-color]="
@@ -32,6 +33,7 @@ import { WhatsappRedirectionComponent } from './components/whatsapp-redirection/
     <app-whatsapp-redirection />
     <router-outlet />
     <app-footer />
+  </div>
   `,
   styles: `
     :host {

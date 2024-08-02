@@ -4,8 +4,7 @@
   <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg" alt="Logo Control Legal"></a>
   <img (click)="toggleMenu()" class="burguer-menu" src="/assets/icons/burguer-menu.svg" alt="Abrir Menú">
 
-  @if (openMenu) {
-    <div class="navigation-menu">
+    <div class="navigation-menu" [style.display]="openMenu ? 'flex' : 'none'">
       <div class="navigation-header">
         <div class="section-container">
           <div class="content">
@@ -56,7 +55,6 @@
         </div>
       </div>
     </div>
-  }
 </header>
 } @else if (isNavbarResponsive != null) {
 <header>
