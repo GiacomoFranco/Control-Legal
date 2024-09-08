@@ -1,0 +1,11 @@
+<section class="customers">
+  <div class="section-container">
+    <div class="content">
+      <div class="customers-element">
+        @if (customers$ | async; as customers) {
+          <app-customer-swiper [customersArray]="customers" />
+        }
+      </div>
+    </div>
+  </div>
+</section>

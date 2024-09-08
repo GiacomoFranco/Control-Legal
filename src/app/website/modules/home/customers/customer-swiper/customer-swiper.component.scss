@@ -1,0 +1,30 @@
+@import 'swiper';
+
+:host {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 200px;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 2rem;
+
+  .swiper {
+    .swiper-wrapper {
+      transition-timing-function: linear;
+
+      div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        aspect-ratio: 1 / 1;
+
+        img {
+          width: 6rem
+        }
+      }
+    }
+  }
+
+  @include swiper(10rem);
+}
