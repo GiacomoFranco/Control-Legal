@@ -1,11 +1,7 @@
-<div class="swiper" [id]="swiperID">
-  <div class="swiper-wrapper">
-    @for (customers of customersArray; track $index) {
-      <div class="swiper-slide">
-      @for (customer of customers; track $index) {
-          <img [src]="customer.photo?.url" alt="" />
-        }
-      </div>
-    }
-  </div>
+<div class="keen-slider" [id]="keenSliderID">
+  @for (customer of customersArray; track $index) {
+    <div class="keen-slider__slide">
+      <img [src]="customer.photo?.url" alt="" />
+    </div>
+  }
 </div>

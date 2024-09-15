@@ -1,4 +1,3 @@
-import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   Input,
@@ -7,8 +6,7 @@ import {
   inject,
 } from '@angular/core';
 import { Customer } from '@app/website/interfaces/customer.interface';
-import Swiper from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import KeenSlider, { KeenSliderHooks } from 'keen-slider';
 
 @Component({
   selector: 'app-customer-swiper',
@@ -18,46 +16,38 @@ import { Autoplay } from 'swiper/modules';
   styleUrl: './customer-swiper.component.scss',
 })
 export class CustomerSwiperComponent {
-  @Input() customersArray: Customer[][] | undefined = undefined;
+  @Input() customersArray: Customer[] | undefined = undefined;
 
   constructor() {
     afterNextRender(() => {
-      this.initSwiper();
+      this.initKeenSlider();
     });
   }
 
-  swiper: Swiper;
-  swiperID: string = 'customers';
-  allowControls: boolean;
   platformId: Object = inject(PLATFORM_ID);
 
-  initSwiper(): void {
-    this.swiper = new Swiper(`#${this.swiperID}`, {
+  keenSlider: KeenSliderHooks;
+  keenSliderID: string = 'my-keen-slider';
+
+  initKeenSlider(): void {
+    var animation = { duration: 50000, easing: (t) => t };
+
+    this.keenSlider = new KeenSlider('#my-keen-slider', {
       loop: true,
-      modules: [Autoplay],
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 20,
-      autoplay: {
-        delay: 0,
+      renderMode: 'performance',
+      drag: true,
+      slides: {
+        perView: 4,
       },
-      speed: 90000,
-      breakpoints: {
-        800: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-        1470: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-        },
+      created(s) {
+        s.moveToIdx(5, true, animation);
+      },
+      updated(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
+      },
+      animationEnded(s) {
+        s.moveToIdx(s.track.details.abs + 5, true, animation);
       },
     });
-  }
-
-  ngOnDestroy(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.swiper.off('breakpoint');
-    }
   }
 }

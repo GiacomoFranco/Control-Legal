@@ -1,4 +1,5 @@
 @import 'swiper';
+@import url('keen-slider/keen-slider.min.css');
 
 :host {
   display: flex;
@@ -9,22 +10,9 @@
   justify-content: space-between;
   gap: 2rem;
 
-  .swiper {
-    .swiper-wrapper {
-      transition-timing-function: linear;
-
-      div {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        aspect-ratio: 1 / 1;
-
-        img {
-          width: 6rem
-        }
-      }
+  .keen-slider {
+    img {
+      height: 9rem;
     }
   }
-
-  @include swiper(10rem);
 }
