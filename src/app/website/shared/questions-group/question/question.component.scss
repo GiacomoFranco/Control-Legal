@@ -19,7 +19,9 @@
       cursor: pointer;
       gap: 3rem;
 
+
       h4 {
+        margin: none;
         user-select: none;
         font-size: var(--fs-400);
         font-weight: 400;
@@ -30,20 +32,34 @@
       }
     }
 
+    ::ng-deep {
     .question-answer {
-      max-height: 0;
-      overflow: hidden;
 
-      &.active {
-        max-height: initial;
-      }
 
-      p {
-        transition: all 1s ease-in-out;
-        color: #5D6D6F;
-        padding-bottom: var(--padding-bottom);
-        word-break: break-all;
+        max-height: 0;
+        overflow: hidden;
+
+        &.active {
+          max-height: initial;
+        }
+
+        p {
+          transition: all 1s ease-in-out;
+          color: #5D6D6F;
+          padding-bottom: var(--padding-bottom);
+          word-break: break-all;
+          font-size: var(--fs-300);
+          line-height: calc(var(--fs-300) + .1rem);
+
+        }
+
+        a {
+          color: var(--main-white);
+          font-size: var(--fs-200);
+          font-weight: 400;
+          text-decoration: none;
+        }
       }
-    }
+      }
   }
 }
