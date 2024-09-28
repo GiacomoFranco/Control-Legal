@@ -2,12 +2,14 @@
   <article class="section-container">
     <div class="content">
       <h2><span class="highlight-text">Tienes preguntas?</span> <br> No te preocupes, nosotros tenemos respuestas.</h2>
-      <app-questions-group>
-        @for (question of questionsGroup; track $index) {
-          <app-question [question]="question.question" [answer]="question.answer"/>
-        }
-        <app-redirection redirection text="Ver todas las preguntas frecuentes" url="/faq" />
-      </app-questions-group>
+      @if(questions$ | async; as questions) {
+        <app-questions-group>
+          @for (question of questions; track $index) {
+            <app-question [question]="question.question" [answer]="question.answer"/>
+          }
+          <app-redirection redirection text="Ver todas las preguntas frecuentes" url="/faq" />
+        </app-questions-group>
+      }
     </div>
   </article>
 </section>

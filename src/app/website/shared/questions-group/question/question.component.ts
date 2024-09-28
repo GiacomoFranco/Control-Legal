@@ -10,8 +10,11 @@ import { Component, Input } from '@angular/core';
         <h4>{{ question }}</h4>
         <img src="/assets/icons/arrow-up-down.svg" alt="Desplegar pregunta" />
       </div>
-      <div class="question-answer" [class.active]="toggleStatus">
-        <p [innerHTML]="answer"></p>
+      <div
+        class="question-answer"
+        [class.active]="toggleStatus"
+        [innerHTML]="answer"
+      >
       </div>
     </div>
   `,
