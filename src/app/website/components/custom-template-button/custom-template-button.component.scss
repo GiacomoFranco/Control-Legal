@@ -1,0 +1,16 @@
+ button {
+   width: 100%;
+   background-color: var(--light-green);
+   color: var(--dark-green-secondary);
+   font-weight: 400 !important;
+   border: none;
+   border-radius: 99rem;
+   padding: 1.5rem;
+
+   cursor: pointer;
+
+   img {
+     margin-left: .6rem;
+     width: .9rem;
+   }
+ }

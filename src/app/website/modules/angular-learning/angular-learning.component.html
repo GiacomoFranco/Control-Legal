@@ -1,0 +1,23 @@
+<!-- <h1>Counter {{ counterSignal() }}</h1>
+<app-submit-button text="Aument" style="width: 30rem; display: block; margin-top: 2rem;" (click)="addToCounter()"/>
+<app-submit-button text="Aument Other" style="width: 30rem; display: block; margin-top: 2rem;" (click)="addToOtherOne()"/>
+<app-submit-button #test text="Cancel logs" style="width: 30rem; display: block; margin-top: 2rem;" (click)="cancelEffect()" />
+<app-submit-button text="Hello desde un componente interno" style="width: 30rem; display: block; margin-top: 2rem;" (click)="test.printHello()" />
+<hr style="margin: 3rem 0;">
+@let test = 'message'; -->
+
+@if({key: 'test'}; as savingVar){
+  <h1>Object exist, it has a key and it is: <b class="highlight-text">{{ savingVar.key }}</b></h1>
+}
+
+<app-submit-button (click)="getTagComponent()" text="View Child Example"/>
+
+<app-category-tag category="Tag" [secondary]="true" />
+<app-category-tag category="secondary Tag" />
+
+<hr>
+
+<app-submit-button (click)="forceDetection()" text="Force detection"/>
+<app-submit-button (click)="modifyDOM()" text="Change DOM"/>
+
+<p id="test">Texto a Cambiar</p>

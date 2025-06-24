@@ -1,0 +1,26 @@
+<main class="learning-section">
+  <ng-container *ngIf="false">
+    <h1>haii</h1>
+    <app-child-component>
+      <h2 #content>Test content</h2>
+      <app-category-tag category="Child 1" />
+      <app-category-tag category="Child 2" />
+    </app-child-component>
+    <app-submit-button text="Change tag name" (click)="changeTag()" />
+  <hr>
+  </ng-container>
+  <app-custom-template-button [initialTemplate]="initial" [loadingTemplate]="loading" [doneTemplate]="saved"/>
+</main>
+
+<ng-template #initial>
+  Save
+</ng-template>
+
+<ng-template #loading>
+  Loading...
+    <img src="https://github.com/alcfeoh/ng-advanced-workshop/raw/master/src/assets/loader.gif" style="width: 20px">
+</ng-template>
+
+<ng-template #saved>
+  SAVED!
+</ng-template>

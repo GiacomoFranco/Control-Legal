@@ -8,6 +8,12 @@
   color: var(--opaque-white);
 }
 
+.learning-section {
+  min-height: 100vh;
+  margin-top: 12.8rem;
+  padding: 1rem;
+}
+
 :root {
   --max-width: 1700px;
   --section-x-margin: clamp(7rem, 7.7vw, 9.6rem);

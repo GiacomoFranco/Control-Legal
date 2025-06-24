@@ -35,4 +35,8 @@ import { Component, Input } from '@angular/core';
 export class CategoryTagComponent {
   @Input() category: string;
   @Input() secondary: boolean = false;
+
+  alertSomething(){
+    alert('Alert from tag component')
+  }
 }

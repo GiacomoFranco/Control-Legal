@@ -1,0 +1,24 @@
+<div class="learning-section">
+  <h1 style="margin-bottom: 20px;">Directives</h1>
+  <select [(ngModel)]="rolActual">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+    <option value="guest">Guest</option>
+  </select>
+
+  <ng-container>
+    <ng-template appPermiso="admin" [rolActual]="rolActual">
+      <H2 class="highlight-text">This only can be seen by an Admin</H2>
+    </ng-template>
+
+    <ng-template [appPermiso]="['admin','user']" [rolActual]="rolActual">
+      <H2 class="highlight-text">This only can be seen by an User</H2>
+    </ng-template>
+
+    <ng-template [appPermiso]="['admin','guest']" [rolActual]="rolActual">
+      <H2 class="highlight-text">This only can be seen by an Guest</H2>
+    </ng-template>
+  </ng-container>
+
+  <p appHighlight>Test Element</p>
+</div>

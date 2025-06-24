@@ -48,6 +48,30 @@ export const routes: Routes = [
       ),
   },
   {
+    title: 'Learning Angular',
+    path: 'angular',
+    loadComponent: () =>
+      import(
+        './website/modules/angular-learning/angular-learning.component'
+      ).then((m) => m.AngularLearningComponent),
+  },
+  {
+    title: 'Proyections',
+    path: 'proyection',
+    loadComponent: () =>
+      import(
+        './website/modules/angular-learning/proyection/proyection.component'
+      ).then((m) => m.ProyectionComponent),
+  },
+  {
+    title: 'Directives',
+    path: 'directives',
+    loadComponent: () =>
+      import(
+        './website/modules/directives/directives.component'
+      ).then((m) => m.DirectivesComponent),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
