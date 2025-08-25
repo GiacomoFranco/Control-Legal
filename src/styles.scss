@@ -99,10 +99,18 @@ h2 {
   }
 }
 
-p, ul {
+p, ul, li {
   font-size: var(--fs-300);
-  line-height: calc(var(--fs-300) + .1rem);
+  line-height: calc(var(--fs-300) + .5rem);
   color: var(--opaque-white);
+}
+
+ul {
+  margin-top: 1.5rem;
+}
+
+li {
+  margin-bottom: .3rem;
 }
 
 a {
