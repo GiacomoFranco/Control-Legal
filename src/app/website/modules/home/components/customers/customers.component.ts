@@ -14,5 +14,5 @@ import { CustomerSwiperComponent } from '../../customers/customer-swiper/custome
 })
 export class CustomersComponent {
   constructor(private customersService: CustomersService) {}
-  customers$: Observable<Customer[][]> = this.customersService.getCustomers();
+  customers$: Observable<Customer[][]> = this.customersService.customersSwiper$;
 }

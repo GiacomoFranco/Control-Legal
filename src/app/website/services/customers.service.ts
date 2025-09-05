@@ -11,25 +11,15 @@ export class CustomersService {
   readonly API_URL: string = import.meta.env['NG_APP_API_URL'];
   readonly platformId = inject(PLATFORM_ID);
 
-  customers$: Observable<Customer> | any;
+  readonly customers$ = isPlatformBrowser(this.platformId)
+    ? this.http.get<Customer[]>(`${this.API_URL}clients`)
+    : undefined;
 
-  constructor(private http: HttpClient) {
-    if (isPlatformBrowser(this.platformId)) {
-      if (!this.customers$) {
-        this.fetchCustomers();
-      }
-    }
-  }
+  constructor(private http: HttpClient) {}
 
-  fetchCustomers() {
-    this.customers$ = this.http.get<any>(`${this.API_URL}clients`);
-  }
-
-  getCustomers() {
-    return this.customers$.pipe(
-      map((customers: Customer[]) => {
-        return Array.from({ length: 7 }, () => customers);
-      })
-    );
-  }
+  customersSwiper$ = this.customers$?.pipe(
+    map((customers: Customer[]) => {
+      return Array.from({ length: 7 }, () => customers);
+    })
+  )
 }

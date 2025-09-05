@@ -37,7 +37,7 @@ export class CustomerSwiperComponent {
       modules: [Autoplay],
       slidesPerView: 1,
       slidesPerGroup: 1,
-      spaceBetween: 20,
+      spaceBetween: 87.5,
       autoplay: {
         delay: 0,
       },
