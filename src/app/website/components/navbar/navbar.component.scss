@@ -14,7 +14,29 @@
   header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    .header {
+      justify-content: space-between;
+      flex-grow: 1;
+
+      &.movile-header {
+          display: none;
+        }
+
+        &.desktop-header {
+          display: flex;
+        }
+
+      @include custom-breakpoint(1150) {
+        &.movile-header {
+          display: flex;
+        }
+
+        &.desktop-header {
+          display: none;
+        }
+      }
+    }
 
     .links-element {
       display: flex;
@@ -66,7 +88,7 @@
       width: 100vw;
       background-image: url('/assets/images/navigation-menu-background.png');
       background-position: center;
-      background-size: auto;
+      background-size: cover;
       left: 0;
       top: 0;
 

@@ -1,14 +1,14 @@
-@if (isNavbarResponsive) {
 <header>
-
-  <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg" alt="Logo Control Legal"></a>
-  <img (click)="toggleMenu()" class="burguer-menu" src="/assets/icons/burguer-menu.svg" alt="Abrir Menú">
+  <div class="movile-header header">
+    <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg" alt="Logo Control Legal"></a>
+    <img (click)="toggleMenu()" class="burguer-menu" src="/assets/icons/burguer-menu.svg" alt="Abrir Menú">
 
     <div class="navigation-menu" [style.display]="openMenu ? 'flex' : 'none'">
       <div class="navigation-header">
         <div class="section-container">
           <div class="content">
-            <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg" alt="Logo Control Legal"></a>
+            <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg"
+                alt="Logo Control Legal"></a>
             <img (click)="toggleMenu()" class="burguer-menu" src="/assets/icons/close-icon.svg" alt="Cerrar Menú">
           </div>
         </div>
@@ -19,13 +19,15 @@
             <nav>
               <ul class="links-element">
                 <li>
-                  <a routerLink="" routerLinkActive="active-link movil" [routerLinkActiveOptions]="{exact:true}" (click)="toggleMenu()">Inicio</a>
+                  <a routerLink="" routerLinkActive="active-link movil" [routerLinkActiveOptions]="{exact:true}"
+                    (click)="toggleMenu()">Inicio</a>
                 </li>
                 <li>
                   <a routerLink="servicios" routerLinkActive="active-link movil" (click)="toggleMenu()">Servicios</a>
                 </li>
                 <li>
-                  <a routerLink="sobre-nosotros" routerLinkActive="active-link movil" (click)="toggleMenu()">Sobre Nosotros</a>
+                  <a routerLink="sobre-nosotros" routerLinkActive="active-link movil" (click)="toggleMenu()">Sobre
+                    Nosotros</a>
                 </li>
                 <li>
                   <a routerLink="blog" routerLinkActive="active-link movil" (click)="toggleMenu()">Blog</a>
@@ -35,7 +37,8 @@
                 </li>
               </ul>
             </nav>
-            <a class="contact-button" routerLink="contacto" (click)="toggleMenu()">Contacta con nuestro equipo de profesionales <img src="/assets/icons/redirection-arrow.svg" alt="Ir a contáctanos"></a>
+            <a class="contact-button" routerLink="contacto" (click)="toggleMenu()">Contacta con nuestro equipo de
+              profesionales <img src="/assets/icons/redirection-arrow.svg" alt="Ir a contáctanos"></a>
           </div>
           <div class="contact-information">
             <a href="">controllegalcl&#64;gmail.com</a>
@@ -55,29 +58,29 @@
         </div>
       </div>
     </div>
-</header>
-} @else if (isNavbarResponsive != null) {
-<header>
+  </div>
+  <div class="desktop-header header">
     <a routerLink="/"><img class="logo-element" src="/assets/icons/logo-control-legal.svg" alt="Logo Control Legal"></a>
-  <nav>
-    <ul class="links-element">
-      <li>
-        <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
-      </li>
-      <li>
-        <a routerLink="servicios" routerLinkActive="active-link">Servicios</a>
-      </li>
-      <li>
-        <a routerLink="sobre-nosotros" routerLinkActive="active-link">Sobre Nosotros</a>
-      </li>
-      <li>
-        <a routerLink="blog" routerLinkActive="active-link">Blog</a>
-      </li>
-      <li>
-        <a routerLink="faq" routerLinkActive="active-link">FAQ</a>
-      </li>
-    </ul>
-  </nav>
-  <a class="rounded-button" routerLink="contacto">Contacto <img src="/assets/icons/redirection-arrow.svg" alt="Ir a la sección"></a>
+    <nav>
+      <ul class="links-element">
+        <li>
+          <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="servicios" routerLinkActive="active-link">Servicios</a>
+        </li>
+        <li>
+          <a routerLink="sobre-nosotros" routerLinkActive="active-link">Sobre Nosotros</a>
+        </li>
+        <li>
+          <a routerLink="blog" routerLinkActive="active-link">Blog</a>
+        </li>
+        <li>
+          <a routerLink="faq" routerLinkActive="active-link">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+    <a class="rounded-button" routerLink="contacto">Contacto <img src="/assets/icons/redirection-arrow.svg"
+        alt="Ir a la sección"></a>
+  </div>
 </header>
-}

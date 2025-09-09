@@ -10,35 +10,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(DOCUMENT) private document: Document,
-  ) {}
-
   @Output() openedMenu = new EventEmitter();
 
-  isNavbarResponsive: boolean;
   openMenu: boolean = false;
 
   toggleMenu(): void {
     this.openMenu = !this.openMenu;
     this.openedMenu.emit(this.openMenu);
-  }
-
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.checkWindowSize();
-    }
-  }
-
-  checkWindowSize() {
-    this.isNavbarResponsive = this.document.defaultView.innerWidth <= 1150;
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.checkWindowSize();
-    }
   }
 }
