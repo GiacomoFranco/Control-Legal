@@ -11,18 +11,18 @@ import { RouterLink } from '@angular/router';
         <div class="service-name">
           <p>{{ serviceName }}</p>
         </div>
-        <img class="background-image" [src]="imageUrl" alt="" />
+        <img class="background-image" [src]="imageUrl" [alt]="serviceSlug" />
       </a>
     } @else {
       <a routerLink="/servicios">
         <div class="redirection-name">
-          <img src="/assets/icons/redirection-arrow-green.svg" alt="" />
+          <img src="/assets/icons/redirection-arrow-green.svg" alt="Redirección" />
           <p>Estos son los servicios jurídicos que ofrecemos para ti</p>
         </div>
         <img
           class="background-image"
           src="/assets/images/legal-redirection.webp"
-          alt=""
+          alt="redirección"
         />
       </a>
     }

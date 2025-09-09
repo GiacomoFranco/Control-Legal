@@ -3,7 +3,7 @@
     @for (customers of customersArray; track $index) {
       <div class="swiper-slide">
       @for (customer of customers; track $index) {
-          <img [src]="customer.photo?.url" alt="" />
+          <img [src]="customer.photo?.url" [alt]="customer.slug" />
         }
       </div>
     }
