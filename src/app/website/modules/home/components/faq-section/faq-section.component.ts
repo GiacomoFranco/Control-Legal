@@ -15,7 +15,7 @@ export class FaqSectionComponent {
     {
       question: '¿Dónde puedo ver información sobre procesos judiciales?',
       answer:
-        'El estado de los procesos judiciales, pueden ser consultados por cualquier persona, bien sea con el nombre completo de alguno de los sujetos del proceso o bien con el número de radicado, estas consultas podrán realizarse directamente en la página web de la Rama Judicial, en el siguiente enlace: <a href="https://consultaprocesos.ramajudicial.gov.co/procesos/Index" target="_blank">https://consultaprocesos.ramajudicial.gov.co/procesos/Index<a/>',
+        'El estado de los procesos judiciales, pueden ser consultados por cualquier persona, bien sea con el nombre completo de alguno de los sujetos del proceso o bien con el número de radicado, estas consultas podrán realizarse directamente en la página web de la Rama Judicial, en el siguiente enlace: <a href="https://consultaprocesos.ramajudicial.gov.co/procesos/Index" target="_blank">https://consultaprocesos.ramajudicial.gov.co/procesos/Index</a>',
     },
     {
       question: '¿Qué es la Conciliación en Derecho?',
