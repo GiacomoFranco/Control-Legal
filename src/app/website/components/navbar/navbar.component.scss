@@ -16,27 +16,32 @@
     align-items: center;
 
     .header {
-      justify-content: space-between;
-      flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
 
-      &.movile-header {
-          display: none;
-        }
-
-        &.desktop-header {
-          display: flex;
-        }
-
-      @include custom-breakpoint(1150) {
         &.movile-header {
-          display: flex;
+          visibility: hidden;
+          position: absolute;
         }
 
         &.desktop-header {
-          display: none;
+          visibility: visible;
+          position: relative;
+        }
+
+        @include custom-breakpoint(1150) {
+          &.movile-header {
+            visibility: visible;
+            position: relative;
+          }
+
+          &.desktop-header {
+            visibility: hidden;
+            position: absolute;
+          }
         }
       }
-    }
 
     .links-element {
       display: flex;
